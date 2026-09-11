@@ -1,0 +1,302 @@
+[
+ {
+  "cards": [
+   {
+    "card": "Scheduled Sessions",
+    "doctype": "Number Card Link",
+    "idx": 1
+   },
+   {
+    "card": "Confirmed Delegations",
+    "doctype": "Number Card Link",
+    "idx": 2
+   },
+   {
+    "card": "Confirmed Bilaterals",
+    "doctype": "Number Card Link",
+    "idx": 3
+   }
+  ],
+  "charts": [
+   {
+    "chart": "IDO Sessions by Track",
+    "doctype": "Dashboard Chart Link",
+    "idx": 1,
+    "width": "Half"
+   },
+   {
+    "chart": "IDO Sessions by Hall",
+    "doctype": "Dashboard Chart Link",
+    "idx": 2,
+    "width": "Half"
+   },
+   {
+    "chart": "IDO Delegations by Type",
+    "doctype": "Dashboard Chart Link",
+    "idx": 3,
+    "width": "Half"
+   },
+   {
+    "chart": "IDO Bilateral by Status",
+    "doctype": "Dashboard Chart Link",
+    "idx": 4,
+    "width": "Half"
+   }
+  ],
+  "dashboard_name": "IDO Programme & Protocol",
+  "docstatus": 0,
+  "doctype": "Dashboard",
+  "idx": 0,
+  "is_default": 0,
+  "is_standard": 0,
+  "module": "IDO Event",
+  "name": "IDO Programme & Protocol"
+ },
+ {
+  "cards": [
+   {
+    "card": "Total Revenue",
+    "doctype": "Number Card Link",
+    "idx": 1
+   },
+   {
+    "card": "Paid Registrations",
+    "doctype": "Number Card Link",
+    "idx": 2
+   },
+   {
+    "card": "Tickets Sold",
+    "doctype": "Number Card Link",
+    "idx": 3
+   },
+   {
+    "card": "Awaiting Payment",
+    "doctype": "Number Card Link",
+    "idx": 4
+   }
+  ],
+  "charts": [
+   {
+    "chart": "IDO Revenue by Status",
+    "doctype": "Dashboard Chart Link",
+    "idx": 1,
+    "width": "Half"
+   },
+   {
+    "chart": "IDO Registrations by Status",
+    "doctype": "Dashboard Chart Link",
+    "idx": 2,
+    "width": "Half"
+   },
+   {
+    "chart": "IDO Registrations by Type",
+    "doctype": "Dashboard Chart Link",
+    "idx": 3,
+    "width": "Half"
+   },
+   {
+    "chart": "IDO Tickets by Type",
+    "doctype": "Dashboard Chart Link",
+    "idx": 4,
+    "width": "Half"
+   },
+   {
+    "chart": "IDO Ticket Revenue",
+    "doctype": "Dashboard Chart Link",
+    "idx": 5,
+    "width": "Half"
+   },
+   {
+    "chart": "IDO Tickets by Status",
+    "doctype": "Dashboard Chart Link",
+    "idx": 6,
+    "width": "Half"
+   }
+  ],
+  "dashboard_name": "IDO Commercial",
+  "docstatus": 0,
+  "doctype": "Dashboard",
+  "idx": 0,
+  "is_default": 0,
+  "is_standard": 0,
+  "module": "IDO Event",
+  "name": "IDO Commercial"
+ },
+ {
+  "cards": [
+   {
+    "card": "Open Tasks",
+    "doctype": "Number Card Link",
+    "idx": 1
+   },
+   {
+    "card": "Completed Tasks",
+    "doctype": "Number Card Link",
+    "idx": 2
+   },
+   {
+    "card": "Open Service Requests",
+    "doctype": "Number Card Link",
+    "idx": 3
+   }
+  ],
+  "charts": [
+   {
+    "chart": "IDO Tasks by Team",
+    "doctype": "Dashboard Chart Link",
+    "idx": 1,
+    "width": "Half"
+   },
+   {
+    "chart": "IDO Tasks by Status",
+    "doctype": "Dashboard Chart Link",
+    "idx": 2,
+    "width": "Half"
+   },
+   {
+    "chart": "IDO Tasks by Priority",
+    "doctype": "Dashboard Chart Link",
+    "idx": 3,
+    "width": "Half"
+   },
+   {
+    "chart": "IDO Service Requests by Type",
+    "doctype": "Dashboard Chart Link",
+    "idx": 4,
+    "width": "Half"
+   },
+   {
+    "chart": "IDO Support by Category",
+    "doctype": "Dashboard Chart Link",
+    "idx": 5,
+    "width": "Half"
+   }
+  ],
+  "dashboard_name": "IDO Operations & Tasks",
+  "docstatus": 0,
+  "doctype": "Dashboard",
+  "idx": 0,
+  "is_default": 0,
+  "is_standard": 0,
+  "module": "IDO Event",
+  "name": "IDO Operations & Tasks"
+ },
+ {
+  "cards": [
+   {
+    "card": "Flight Tickets",
+    "doctype": "Number Card Link",
+    "idx": 1
+   },
+   {
+    "card": "Arrived",
+    "doctype": "Number Card Link",
+    "idx": 2
+   },
+   {
+    "card": "Hotel Checked In",
+    "doctype": "Number Card Link",
+    "idx": 3
+   }
+  ],
+  "charts": [
+   {
+    "chart": "IDO Flight Status",
+    "doctype": "Dashboard Chart Link",
+    "idx": 1,
+    "width": "Half"
+   },
+   {
+    "chart": "IDO Arrivals by Status",
+    "doctype": "Dashboard Chart Link",
+    "idx": 2,
+    "width": "Half"
+   },
+   {
+    "chart": "IDO Trips by State",
+    "doctype": "Dashboard Chart Link",
+    "idx": 3,
+    "width": "Half"
+   },
+   {
+    "chart": "IDO Hotel Stay Status",
+    "doctype": "Dashboard Chart Link",
+    "idx": 4,
+    "width": "Half"
+   },
+   {
+    "chart": "IDO Hotel Occupancy",
+    "doctype": "Dashboard Chart Link",
+    "idx": 5,
+    "width": "Half"
+   }
+  ],
+  "dashboard_name": "IDO Travel & Logistics",
+  "docstatus": 0,
+  "doctype": "Dashboard",
+  "idx": 0,
+  "is_default": 0,
+  "is_standard": 0,
+  "module": "IDO Event",
+  "name": "IDO Travel & Logistics"
+ },
+ {
+  "cards": [
+   {
+    "card": "Confirmed Guests",
+    "doctype": "Number Card Link",
+    "idx": 1
+   },
+   {
+    "card": "KYC Approved",
+    "doctype": "Number Card Link",
+    "idx": 2
+   },
+   {
+    "card": "Visas Issued",
+    "doctype": "Number Card Link",
+    "idx": 3
+   }
+  ],
+  "charts": [
+   {
+    "chart": "IDO Guests by Stage",
+    "doctype": "Dashboard Chart Link",
+    "idx": 1,
+    "width": "Half"
+   },
+   {
+    "chart": "IDO Guests by Nationality",
+    "doctype": "Dashboard Chart Link",
+    "idx": 2,
+    "width": "Half"
+   },
+   {
+    "chart": "IDO KYC Status",
+    "doctype": "Dashboard Chart Link",
+    "idx": 3,
+    "width": "Half"
+   },
+   {
+    "chart": "IDO Guests by Category",
+    "doctype": "Dashboard Chart Link",
+    "idx": 4,
+    "width": "Half"
+   },
+   {
+    "chart": "IDO Guests by Funding",
+    "doctype": "Dashboard Chart Link",
+    "idx": 5,
+    "width": "Half"
+   }
+  ],
+  "dashboard_name": "IDO Guest Journey",
+  "docstatus": 0,
+  "doctype": "Dashboard",
+  "idx": 0,
+  "is_default": 0,
+  "is_standard": 0,
+  "module": "IDO Event",
+  "name": "IDO Guest Journey"
+ }
+]

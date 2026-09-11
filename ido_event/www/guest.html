@@ -1,0 +1,385 @@
+{% extends "templates/web.html" %}
+
+{% block title %}{{ title or _("بوابة الضيف") }}{% endblock %}
+
+{% block head_include %}
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Kufi+Arabic:wght@500;600;700;800&family=Tajawal:wght@400;500;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr@4.6.13/dist/flatpickr.min.css">
+{% if cover_image_abs %}
+<meta property="og:image" content="{{ cover_image_abs }}">
+{% endif %}
+<link rel="stylesheet" href="/assets/ido_event/css/guest_portal.css">
+<script src="https://cdn.jsdelivr.net/npm/flatpickr@4.6.13/dist/flatpickr.min.js" defer></script>
+<script src="https://cdn.jsdelivr.net/npm/flatpickr@4.6.13/dist/l10n/ar.js" defer></script>
+{% endblock %}
+
+{% block page_content %}
+<div class="ido-guest-portal{% if cover_image %} has-cover{% endif %}" dir="rtl" lang="ar">
+
+	{# ── Hero ── #}
+	<header class="ido-hero" {% if cover_image %}style="--ido-cover: url('{{ cover_image | e }}')"{% endif %}>
+		<div class="ido-hero-media" aria-hidden="true"></div>
+		<div class="ido-hero-shade"></div>
+		<div class="ido-hero-inner">
+			<div class="ido-hero-brand">
+				<span class="ido-mark">I DO</span>
+				<span class="ido-pill">{{ _("دعوة رسمية") }}</span>
+			</div>
+
+			{% if error %}
+				<h1 class="ido-hero-title">{{ _("الدعوة غير متاحة") }}</h1>
+				<p class="ido-hero-sub">{{ error }}</p>
+			{% else %}
+				<p class="ido-hero-kicker">{% if guest.first_name %}{{ _("مرحباً") }} {{ guest.first_name }}{% else %}{{ _("أنت مدعو") }}{% endif %}</p>
+				<h1 class="ido-hero-title">{{ event_name }}</h1>
+				<ul class="ido-hero-facts">
+					{% if date_range %}
+					<li>
+						<span class="ido-fact-dot" aria-hidden="true"></span>
+						<span>{{ date_range }}</span>
+					</li>
+					{% endif %}
+					{% if event.venue or event.city %}
+					<li>
+						<span class="ido-fact-dot" aria-hidden="true"></span>
+						<span>{{ event.venue or event.city }}</span>
+					</li>
+					{% endif %}
+					{% if event.host_organization %}
+					<li>
+						<span class="ido-fact-dot" aria-hidden="true"></span>
+						<span>{{ event.host_organization }}</span>
+					</li>
+					{% endif %}
+				</ul>
+				{% if description %}
+					<p class="ido-hero-desc">{{ description }}{% if description|length >= 220 %}…{% endif %}</p>
+				{% endif %}
+			{% endif %}
+		</div>
+	</header>
+
+	{# ── Body ── #}
+	<main class="ido-guest-main">
+		{% if error %}
+			<section class="ido-panel ido-panel-enter">
+				<form class="ido-guest-form" method="get" action="/guest">
+					<label for="code">{{ _("رمز الدعوة") }}</label>
+					<input id="code" name="code" type="text" required placeholder="XXXXXXXX" value="{{ code or '' }}" autocomplete="off">
+					<button type="submit" class="ido-guest-btn">{{ _("تحقق من الدعوة") }}</button>
+				</form>
+			</section>
+		{% else %}
+			<section class="ido-panel ido-panel-enter">
+				<div class="ido-panel-head">
+					<h2>{{ _("أكمل تسجيلك") }}</h2>
+					<p>{{ _("بياناتك محمية وتُستخدم فقط لترتيب حضور الفعالية.") }}</p>
+				</div>
+
+				<form id="ido-register-form" class="ido-guest-form">
+					<input type="hidden" name="code" value="{{ code }}">
+
+					<div class="ido-guest-grid">
+						<div>
+							<label for="first_name">{{ _("الاسم الأول") }}</label>
+							<input id="first_name" name="first_name" type="text" required value="{{ guest.first_name or '' }}">
+						</div>
+						<div>
+							<label for="last_name">{{ _("اسم العائلة") }}</label>
+							<input id="last_name" name="last_name" type="text" required value="{{ guest.last_name or '' }}">
+						</div>
+					</div>
+
+					<label for="email">{{ _("البريد الإلكتروني") }}</label>
+					<input id="email" name="email" type="email" required value="{{ guest.email or '' }}">
+
+					<label for="mobile">{{ _("الجوال") }}</label>
+					<input id="mobile" name="mobile" type="tel" placeholder="+966 5…" inputmode="tel" value="{{ guest.mobile or '' }}">
+
+					<div class="ido-guest-grid">
+						<div>
+							<label for="nationality">{{ _("الجنسية") }}</label>
+							<select id="nationality" name="nationality" required>
+								<option value="">{{ _("اختر الجنسية") }}</option>
+								{% for n in nationalities %}
+								<option value="{{ n.name }}" {% if n.selected %}selected{% endif %}>{{ n.label }}</option>
+								{% endfor %}
+							</select>
+						</div>
+						<div>
+							<label for="gender">{{ _("الجنس") }}</label>
+							<select id="gender" name="gender">
+								<option value="">{{ _("اختر") }}</option>
+								<option value="Male" {% if guest.gender == "Male" %}selected{% endif %}>{{ _("ذكر") }}</option>
+								<option value="Female" {% if guest.gender == "Female" %}selected{% endif %}>{{ _("أنثى") }}</option>
+							</select>
+						</div>
+					</div>
+
+					<label for="date_of_birth">{{ _("تاريخ الميلاد") }}</label>
+					<div class="ido-date-wrap">
+						<input id="date_of_birth" name="date_of_birth" type="text" class="ido-date-input" placeholder="{{ _('اختر التاريخ') }}" inputmode="none" autocomplete="bday" readonly value="{{ guest_dob or '' }}">
+						<span class="ido-date-icon" aria-hidden="true"></span>
+					</div>
+
+					<div class="ido-kyc-block">
+						<div class="ido-kyc-head">
+							<h3>{{ _("التحقق من الهوية (KYC)") }}</h3>
+							<p>{{ _("أرفق صورة الجواز والصورة الشخصية لاستكمال التحقق.") }}</p>
+						</div>
+
+						<label for="passport_number">{{ _("رقم جواز السفر") }}</label>
+						<input id="passport_number" name="passport_number" type="text" required value="{{ guest.passport_number or '' }}">
+
+						<div class="ido-guest-grid">
+							<div>
+								<label for="passport_expiry">{{ _("تاريخ انتهاء الجواز") }}</label>
+								<div class="ido-date-wrap">
+									<input id="passport_expiry" name="passport_expiry" type="text" class="ido-date-input" placeholder="{{ _('اختر التاريخ') }}" inputmode="none" readonly value="{{ guest_passport_expiry or '' }}">
+									<span class="ido-date-icon" aria-hidden="true"></span>
+								</div>
+							</div>
+							<div>
+								<label for="issue_country">{{ _("دولة الإصدار") }}</label>
+								<select id="issue_country" name="issue_country" required>
+									<option value="">{{ _("اختر الدولة") }}</option>
+									{% for n in countries %}
+									<option value="{{ n.name }}" {% if n.selected %}selected{% endif %}>{{ n.label }}</option>
+									{% endfor %}
+								</select>
+							</div>
+						</div>
+
+						<div class="ido-upload-grid">
+							<div class="ido-upload-field">
+								<span class="ido-upload-label">{{ _("صورة جواز السفر") }}</span>
+								<label class="ido-upload ido-upload--passport" for="passport_image">
+									<input id="passport_image" name="passport_image_file" type="file" accept="image/*" capture="environment" required>
+									<span class="ido-upload-card">
+										<span class="ido-upload-empty">
+											<span class="ido-upload-icon" aria-hidden="true">
+												<svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+													<rect x="4" y="10" width="40" height="28" rx="4" stroke="currentColor" stroke-width="2"/>
+													<circle cx="16" cy="22" r="5" stroke="currentColor" stroke-width="2"/>
+													<path d="M10 32h12M28 20h12M28 26h8" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+												</svg>
+											</span>
+											<span class="ido-upload-title" data-empty="{{ _('التقط أو ارفع صورة الجواز') }}">{{ _("التقط أو ارفع صورة الجواز") }}</span>
+											<span class="ido-upload-hint">{{ _("يفضّل صورة واضحة لصفحة البيانات") }}</span>
+											<span class="ido-upload-cta">{{ _("اختيار صورة") }}</span>
+										</span>
+										<span class="ido-upload-filled">
+											<img class="ido-upload-preview" alt="{{ _('معاينة الجواز') }}">
+											<span class="ido-upload-badge">{{ _("تم الرفع") }}</span>
+											<span class="ido-upload-change">{{ _("تغيير الصورة") }}</span>
+										</span>
+									</span>
+								</label>
+							</div>
+							<div class="ido-upload-field">
+								<span class="ido-upload-label">{{ _("الصورة الشخصية") }}</span>
+								<label class="ido-upload ido-upload--face" for="face_image">
+									<input id="face_image" name="face_image_file" type="file" accept="image/*" capture="user" required>
+									<span class="ido-upload-card">
+										<span class="ido-upload-empty">
+											<span class="ido-upload-icon ido-upload-icon--face" aria-hidden="true">
+												<svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+													<circle cx="24" cy="24" r="18" stroke="currentColor" stroke-width="2"/>
+													<circle cx="24" cy="20" r="7" stroke="currentColor" stroke-width="2"/>
+													<path d="M10 38c3.5-6 9-9 14-9s10.5 3 14 9" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+												</svg>
+											</span>
+											<span class="ido-upload-title" data-empty="{{ _('التقط صورة شخصية واضحة') }}">{{ _("التقط صورة شخصية واضحة") }}</span>
+											<span class="ido-upload-hint">{{ _("وجهك مقابل الكاميرا · إضاءة جيدة") }}</span>
+											<span class="ido-upload-cta">{{ _("اختيار صورة") }}</span>
+										</span>
+										<span class="ido-upload-filled">
+											<img class="ido-upload-preview" alt="{{ _('معاينة الصورة الشخصية') }}">
+											<span class="ido-upload-badge">{{ _("تم الرفع") }}</span>
+											<span class="ido-upload-change">{{ _("تغيير الصورة") }}</span>
+										</span>
+									</span>
+								</label>
+							</div>
+						</div>
+					</div>
+
+					<div class="ido-prefs-block">
+						<div class="ido-kyc-head">
+							<h3>{{ _("تفضيلات السفر") }}</h3>
+							<p>{{ _("تُستخدم عند تجهيز طلب الطيران الخاص بك.") }}</p>
+						</div>
+						<div class="ido-guest-grid">
+							<div>
+								<label for="preferred_airport">{{ _("المطار المفضل") }}</label>
+								<select id="preferred_airport" name="preferred_airport">
+									<option value="">{{ _("اختر المطار") }}</option>
+									{% for a in airports %}
+									<option value="{{ a.value }}" {% if a.selected %}selected{% endif %}>{{ a.label }}</option>
+									{% endfor %}
+								</select>
+							</div>
+							<div>
+								<label for="preferred_travel_time">{{ _("وقت السفر المفضل") }}</label>
+								<select id="preferred_travel_time" name="preferred_travel_time">
+									<option value="">{{ _("اختر") }}</option>
+									<option value="morning" {% if guest.preferred_travel_time == "morning" %}selected{% endif %}>{{ _("صباحي") }}</option>
+									<option value="night" {% if guest.preferred_travel_time == "night" %}selected{% endif %}>{{ _("ليلي") }}</option>
+								</select>
+							</div>
+						</div>
+					</div>
+
+					<label class="ido-guest-check">
+						<input type="checkbox" name="pdpl" id="pdpl" required>
+						<span class="ido-check-box" aria-hidden="true"></span>
+						<span class="ido-check-text">
+							<strong>{{ _("الموافقة على معالجة البيانات") }}</strong>
+							<span>{{ _("أوافق على معالجة بياناتي الشخصية لغرض حضور الفعالية وفق نظام حماية البيانات الشخصية.") }}</span>
+						</span>
+					</label>
+
+					<button type="submit" class="ido-guest-btn" id="ido-submit-btn">{{ _("تأكيد الحضور وإرسال التحقق") }}</button>
+					<p class="ido-guest-hint">{{ _("رمز الدعوة") }} · <b>{{ code }}</b></p>
+				</form>
+
+				<div id="ido-success" class="ido-guest-success" hidden>
+					<div class="ido-success-mark" aria-hidden="true">✓</div>
+					<h2>{{ _("تم تأكيد تسجيلك") }}</h2>
+					<p>{{ _("تم استلام بياناتك وطلب التحقق من الهوية. سنراجعها ونتواصل معك بالخطوات التالية.") }}</p>
+				</div>
+			</section>
+		{% endif %}
+
+		<footer class="ido-guest-foot">
+			<span>I DO Events</span>
+		</footer>
+	</main>
+</div>
+
+{% if verified %}
+<script>
+(function () {
+	const PLACEHOLDER = {{ _("اختر التاريخ") | tojson }};
+	const BTN_LABEL = {{ _("تأكيد الحضور وإرسال التحقق") | tojson }};
+
+	function wirePicker(id, opts) {
+		const el = document.getElementById(id);
+		if (!el) return;
+		if (typeof flatpickr === "undefined") {
+			setTimeout(() => wirePicker(id, opts), 50);
+			return;
+		}
+		if (el._flatpickr) return;
+		const defaults = el.value || null;
+		flatpickr(el, Object.assign({
+			locale: (flatpickr.l10ns && flatpickr.l10ns.ar) || "ar",
+			dateFormat: "Y-m-d",
+			altInput: true,
+			altFormat: "j F Y",
+			defaultDate: defaults || null,
+			disableMobile: true,
+			allowInput: false,
+			animate: true,
+			monthSelectorType: "static",
+			onReady(_, __, fp) {
+				if (fp.altInput) {
+					fp.altInput.classList.add("ido-date-input");
+					fp.altInput.setAttribute("placeholder", PLACEHOLDER);
+					fp.altInput.readOnly = true;
+				}
+				fp.calendarContainer.classList.add("ido-fp");
+				fp.calendarContainer.setAttribute("dir", "rtl");
+			},
+		}, opts || {}));
+	}
+
+	function wireUploads() {
+		document.querySelectorAll(".ido-upload input[type=file]").forEach((input) => {
+			input.addEventListener("change", () => {
+				const wrap = input.closest(".ido-upload");
+				const title = wrap.querySelector(".ido-upload-title");
+				const preview = wrap.querySelector(".ido-upload-preview");
+				const emptyTitle = title && title.getAttribute("data-empty");
+				const file = input.files && input.files[0];
+				if (!file) return;
+				if (file.size > 8 * 1024 * 1024) {
+					frappe.msgprint({{ _("حجم الصورة كبير جداً (الحد 8MB)") | tojson }});
+					input.value = "";
+					wrap.classList.remove("is-filled");
+					return;
+				}
+				const reader = new FileReader();
+				reader.onload = () => {
+					preview.src = reader.result;
+					wrap.classList.add("is-filled");
+					if (title) title.textContent = file.name;
+					input.dataset.dataUrl = reader.result;
+				};
+				reader.onerror = () => {
+					frappe.msgprint({{ _("تعذّر قراءة الصورة") | tojson }});
+					input.value = "";
+					wrap.classList.remove("is-filled");
+					if (title && emptyTitle) title.textContent = emptyTitle;
+				};
+				reader.readAsDataURL(file);
+			});
+		});
+	}
+
+	wirePicker("date_of_birth", { maxDate: "today", minDate: "1920-01-01" });
+	wirePicker("passport_expiry", { minDate: "today" });
+	wireUploads();
+
+	const form = document.getElementById("ido-register-form");
+	const success = document.getElementById("ido-success");
+	const btn = document.getElementById("ido-submit-btn");
+	const head = document.querySelector(".ido-panel-head");
+	if (!form) return;
+
+	form.addEventListener("submit", async function (e) {
+		e.preventDefault();
+		const passportInput = document.getElementById("passport_image");
+		const faceInput = document.getElementById("face_image");
+		if (!passportInput.dataset.dataUrl || !faceInput.dataset.dataUrl) {
+			frappe.msgprint({{ _("ارفع صورة الجواز والصورة الشخصية لإكمال التحقق") | tojson }});
+			return;
+		}
+
+		btn.disabled = true;
+		btn.textContent = {{ _("جاري التأكيد…") | tojson }};
+
+		const data = Object.fromEntries(new FormData(form).entries());
+		delete data.pdpl;
+		delete data.passport_image_file;
+		delete data.face_image_file;
+		data.create_kyc = 1;
+		data.passport_image = passportInput.dataset.dataUrl;
+		data.face_image = faceInput.dataset.dataUrl;
+
+		try {
+			const r = await frappe.call({
+				method: "ido_event.www.guest.submit_registration",
+				args: data,
+			});
+			if (r.message && r.message.ok) {
+				form.hidden = true;
+				if (head) head.hidden = true;
+				success.hidden = false;
+				success.classList.add("show");
+			} else {
+				frappe.msgprint({{ _("تعذّر إتمام التسجيل") | tojson }});
+				btn.disabled = false;
+				btn.textContent = BTN_LABEL;
+			}
+		} catch (err) {
+			btn.disabled = false;
+			btn.textContent = BTN_LABEL;
+		}
+	});
+})();
+</script>
+{% endif %}
+{% endblock %}

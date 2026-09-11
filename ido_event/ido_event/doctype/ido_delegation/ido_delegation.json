@@ -1,0 +1,204 @@
+{
+ "actions": [],
+ "allow_bulk_edit": 1,
+ "allow_rename": 1,
+ "autoname": "field:delegation_name",
+ "creation": "2026-09-08 03:18:17.857273",
+ "custom": 0,
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "delegation_name",
+  "delegation_name_ar",
+  "event",
+  "delegation_type",
+  "country",
+  "column_break_1",
+  "head_of_delegation",
+  "member_count",
+  "liaison_host",
+  "liaison_phone",
+  "status",
+  "sb_notes",
+  "protocol_notes"
+ ],
+ "fields": [
+  {
+   "fieldname": "delegation_name",
+   "fieldtype": "Data",
+   "idx": 1,
+   "in_list_view": 1,
+   "label": "Delegation Name",
+   "reqd": 1,
+   "unique": 1
+  },
+  {
+   "fieldname": "delegation_name_ar",
+   "fieldtype": "Data",
+   "idx": 2,
+   "label": "\u0627\u0633\u0645 \u0627\u0644\u0648\u0641\u062f"
+  },
+  {
+   "fieldname": "event",
+   "fieldtype": "Link",
+   "idx": 3,
+   "in_standard_filter": 1,
+   "label": "Event",
+   "options": "IDO Event",
+   "reqd": 1
+  },
+  {
+   "default": "Country",
+   "fieldname": "delegation_type",
+   "fieldtype": "Select",
+   "idx": 4,
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Type",
+   "options": "Country\nInternational Organization"
+  },
+  {
+   "fieldname": "country",
+   "fieldtype": "Link",
+   "idx": 5,
+   "in_list_view": 1,
+   "label": "Country",
+   "options": "Country"
+  },
+  {
+   "fieldname": "column_break_1",
+   "fieldtype": "Column Break",
+   "idx": 6
+  },
+  {
+   "fieldname": "head_of_delegation",
+   "fieldtype": "Link",
+   "idx": 7,
+   "label": "\u0631\u0626\u064a\u0633 \u0627\u0644\u0648\u0641\u062f \u00b7 Head of Delegation",
+   "options": "IDO Guest"
+  },
+  {
+   "fieldname": "member_count",
+   "fieldtype": "Int",
+   "idx": 8,
+   "in_list_view": 1,
+   "label": "Members",
+   "read_only": 1
+  },
+  {
+   "fieldname": "liaison_host",
+   "fieldtype": "Link",
+   "idx": 9,
+   "label": "\u0645\u0636\u064a\u0641 \u0627\u0644\u0648\u0641\u062f \u00b7 Youth Host / Liaison",
+   "options": "User"
+  },
+  {
+   "fieldname": "liaison_phone",
+   "fieldtype": "Data",
+   "idx": 10,
+   "label": "\u0648\u0627\u062a\u0633\u0627\u0628 \u0627\u0644\u0645\u0636\u064a\u0641",
+   "options": "Phone"
+  },
+  {
+   "default": "invited",
+   "fieldname": "status",
+   "fieldtype": "Select",
+   "idx": 11,
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Status",
+   "options": "invited\nconfirmed\ndeclined\narrived\ncompleted"
+  },
+  {
+   "fieldname": "sb_notes",
+   "fieldtype": "Section Break",
+   "idx": 12,
+   "label": "Notes"
+  },
+  {
+   "fieldname": "protocol_notes",
+   "fieldtype": "Small Text",
+   "idx": 13,
+   "label": "\u0645\u0644\u0627\u062d\u0638\u0627\u062a \u0627\u0644\u0645\u0631\u0627\u0633\u0645"
+  }
+ ],
+ "grid_page_length": 50,
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2026-09-08 03:18:17.857273",
+ "modified_by": "Administrator",
+ "module": "IDO Event",
+ "name": "IDO Delegation",
+ "naming_rule": "By fieldname",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "IDO Owner",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "IDO Event Manager",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "IDO Organizer",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "IDO Guest",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "row_format": "Dynamic",
+ "rows_threshold_for_grid_search": 20,
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "title_field": "delegation_name",
+ "track_changes": 1
+}

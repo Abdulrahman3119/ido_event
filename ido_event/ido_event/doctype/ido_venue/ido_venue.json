@@ -1,0 +1,288 @@
+{
+ "actions": [],
+ "allow_bulk_edit": 1,
+ "allow_rename": 1,
+ "autoname": "field:venue_name",
+ "creation": "2026-09-06 11:51:44.617335",
+ "custom": 0,
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "venue_name",
+  "venue_name_ar",
+  "city",
+  "country",
+  "column_break_1",
+  "address",
+  "capacity",
+  "map_link",
+  "sb_halls",
+  "halls"
+ ],
+ "fields": [
+  {
+   "fieldname": "venue_name",
+   "fieldtype": "Data",
+   "idx": 1,
+   "in_list_view": 1,
+   "label": "Venue Name",
+   "reqd": 1,
+   "unique": 1
+  },
+  {
+   "fieldname": "venue_name_ar",
+   "fieldtype": "Data",
+   "idx": 2,
+   "label": "Venue Name (AR)"
+  },
+  {
+   "fieldname": "city",
+   "fieldtype": "Data",
+   "idx": 3,
+   "in_list_view": 1,
+   "label": "City"
+  },
+  {
+   "default": "Saudi Arabia",
+   "fieldname": "country",
+   "fieldtype": "Link",
+   "idx": 4,
+   "label": "Country",
+   "options": "Country"
+  },
+  {
+   "fieldname": "column_break_1",
+   "fieldtype": "Column Break",
+   "idx": 5
+  },
+  {
+   "fieldname": "address",
+   "fieldtype": "Link",
+   "idx": 6,
+   "label": "Address",
+   "options": "Address"
+  },
+  {
+   "fieldname": "capacity",
+   "fieldtype": "Int",
+   "idx": 7,
+   "in_list_view": 1,
+   "label": "Total Capacity"
+  },
+  {
+   "fieldname": "map_link",
+   "fieldtype": "Data",
+   "idx": 8,
+   "label": "Map Link",
+   "options": "URL"
+  },
+  {
+   "fieldname": "sb_halls",
+   "fieldtype": "Section Break",
+   "idx": 9,
+   "label": "Halls"
+  },
+  {
+   "fieldname": "halls",
+   "fieldtype": "Table",
+   "idx": 10,
+   "label": "Halls",
+   "options": "IDO Venue Hall"
+  }
+ ],
+ "grid_page_length": 50,
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2026-09-06 11:51:44.617335",
+ "modified_by": "Administrator",
+ "module": "IDO Event",
+ "name": "IDO Venue",
+ "naming_rule": "By fieldname",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "IDO Owner",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "IDO Event Manager",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "IDO Venue Manager",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "IDO Event Planner",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "IDO Organizer",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "IDO Operations",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "IDO Visa Team",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "IDO Travel Team",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "IDO Airport Desk",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "IDO Driver",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "IDO Hotel Desk",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "IDO Badge Team",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "IDO Usher",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "IDO Guest Services",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "row_format": "Dynamic",
+ "rows_threshold_for_grid_search": 20,
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "track_changes": 1
+}

@@ -1,0 +1,63 @@
+{
+ "actions": [],
+ "allow_bulk_edit": 1,
+ "allow_rename": 1,
+ "creation": "2026-09-08 03:03:43.567381",
+ "custom": 0,
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "contact_label",
+  "phone",
+  "available_hours",
+  "notes"
+ ],
+ "fields": [
+  {
+   "fieldname": "contact_label",
+   "fieldtype": "Data",
+   "idx": 1,
+   "in_list_view": 1,
+   "label": "Label",
+   "reqd": 1
+  },
+  {
+   "fieldname": "phone",
+   "fieldtype": "Data",
+   "idx": 2,
+   "in_list_view": 1,
+   "label": "Phone",
+   "options": "Phone",
+   "reqd": 1
+  },
+  {
+   "fieldname": "available_hours",
+   "fieldtype": "Data",
+   "idx": 3,
+   "in_list_view": 1,
+   "label": "Available Hours"
+  },
+  {
+   "fieldname": "notes",
+   "fieldtype": "Small Text",
+   "idx": 4,
+   "label": "Notes"
+  }
+ ],
+ "grid_page_length": 50,
+ "index_web_pages_for_search": 1,
+ "istable": 1,
+ "links": [],
+ "modified": "2026-09-08 03:03:43.567381",
+ "modified_by": "Administrator",
+ "module": "IDO Event",
+ "name": "IDO Emergency Contact",
+ "owner": "Administrator",
+ "permissions": [],
+ "row_format": "Dynamic",
+ "rows_threshold_for_grid_search": 20,
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

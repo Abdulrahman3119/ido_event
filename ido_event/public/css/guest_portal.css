@@ -1,0 +1,941 @@
+/* IDO Guest invitation portal */
+
+:root {
+	--ido-ink: #1a1028;
+	--ido-muted: #5c5470;
+	--ido-line: rgba(26, 16, 40, 0.1);
+	--ido-brand: #5c2d91;
+	--ido-brand-deep: #3d1b66;
+	--ido-gold: #c9a227;
+	--ido-surface: #fffdf9;
+	--ido-radius: 22px;
+	--ido-font: "Tajawal", "Segoe UI", Tahoma, sans-serif;
+	--ido-display: "Noto Kufi Arabic", "Tajawal", Tahoma, sans-serif;
+}
+
+/* Soften / hide default website chrome on this page */
+.ido-guest-portal ~ *,
+body:has(.ido-guest-portal) .navbar,
+body:has(.ido-guest-portal) .web-footer,
+body:has(.ido-guest-portal) .page-header-wrapper,
+body:has(.ido-guest-portal) .page-breadcrumbs {
+	/* navbar/footer targeted below */
+}
+
+body:has(.ido-guest-portal) .navbar,
+body:has(.ido-guest-portal) footer.web-footer,
+body:has(.ido-guest-portal) .page-header,
+body:has(.ido-guest-portal) .breadcrumb {
+	display: none !important;
+}
+
+body:has(.ido-guest-portal) .main-section,
+body:has(.ido-guest-portal) .page_content,
+body:has(.ido-guest-portal) .container,
+body:has(.ido-guest-portal) .web-page-content {
+	padding: 0 !important;
+	max-width: none !important;
+	margin: 0 !important;
+}
+
+.ido-guest-portal {
+	font-family: var(--ido-font);
+	color: var(--ido-ink);
+	background: #0f0a16;
+	min-height: 100vh;
+	overflow-x: hidden;
+}
+
+/* ── Hero ── */
+.ido-hero {
+	position: relative;
+	isolation: isolate;
+	min-height: clamp(360px, 58vh, 620px);
+	display: flex;
+	align-items: flex-end;
+	padding: clamp(28px, 5vw, 56px) clamp(18px, 4vw, 48px) clamp(56px, 8vw, 96px);
+	color: #fff;
+}
+
+.ido-hero-media {
+	position: absolute;
+	inset: 0;
+	z-index: -2;
+	background:
+		var(--ido-cover, none) center / cover no-repeat,
+		linear-gradient(135deg, #2a1548 0%, #5c2d91 45%, #1a0f2e 100%);
+	transform: scale(1.04);
+	animation: ido-ken 18s ease-in-out infinite alternate;
+}
+
+.ido-hero:not([style*="--ido-cover"]) .ido-hero-media {
+	background:
+		radial-gradient(ellipse at 30% 20%, rgba(201, 162, 39, 0.25), transparent 50%),
+		linear-gradient(135deg, #2a1548 0%, #5c2d91 45%, #1a0f2e 100%);
+}
+
+.ido-hero-shade {
+	position: absolute;
+	inset: 0;
+	z-index: -1;
+	background:
+		linear-gradient(180deg, rgba(10, 6, 18, 0.25) 0%, rgba(10, 6, 18, 0.55) 45%, rgba(10, 6, 18, 0.92) 100%),
+		linear-gradient(90deg, rgba(10, 6, 18, 0.55) 0%, transparent 55%);
+}
+
+.ido-hero-inner {
+	width: min(920px, 100%);
+	animation: ido-rise 0.85s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+.ido-hero-brand {
+	display: flex;
+	align-items: center;
+	gap: 12px;
+	margin-bottom: 22px;
+}
+
+.ido-mark {
+	font-family: var(--ido-display);
+	letter-spacing: 0.18em;
+	font-size: 13px;
+	font-weight: 700;
+	color: #ffffff;
+}
+
+.ido-pill {
+	font-size: 11px;
+	font-weight: 600;
+	letter-spacing: 0.04em;
+	padding: 5px 12px;
+	border-radius: 999px;
+	border: 1px solid rgba(255, 255, 255, 0.35);
+	background: rgba(255, 255, 255, 0.1);
+	backdrop-filter: blur(8px);
+}
+
+.ido-hero-kicker {
+	margin: 0 0 8px;
+	font-size: 0.95rem;
+	font-weight: 500;
+	color: rgba(255, 255, 255, 0.82);
+}
+
+.ido-hero-title {
+	margin: 0 0 18px;
+	font-family: var(--ido-display);
+	font-size: clamp(2rem, 5.5vw, 3.4rem);
+	line-height: 1.25;
+	font-weight: 800;
+	letter-spacing: 0;
+	color: #ffffff !important;
+	-webkit-text-fill-color: #ffffff;
+	text-shadow: 0 10px 40px rgba(0, 0, 0, 0.45);
+}
+
+.ido-hero-facts {
+	list-style: none;
+	margin: 0 0 16px;
+	padding: 0;
+	display: flex;
+	flex-wrap: wrap;
+	gap: 10px 18px;
+}
+
+.ido-hero-facts li {
+	display: inline-flex;
+	align-items: center;
+	gap: 8px;
+	font-size: 0.92rem;
+	color: rgba(255, 255, 255, 0.9);
+	background: rgba(255, 255, 255, 0.08);
+	border: 1px solid rgba(255, 255, 255, 0.14);
+	border-radius: 999px;
+	padding: 7px 14px;
+	backdrop-filter: blur(6px);
+}
+
+.ido-fact-dot {
+	width: 7px;
+	height: 7px;
+	border-radius: 50%;
+	background: var(--ido-gold);
+	box-shadow: 0 0 0 3px rgba(201, 162, 39, 0.25);
+	flex-shrink: 0;
+}
+
+.ido-fact-icon {
+	font-size: 0.85rem;
+	opacity: 0.9;
+}
+
+.ido-hero-desc {
+	margin: 0;
+	max-width: 42rem;
+	font-size: 0.98rem;
+	line-height: 1.75;
+	color: rgba(255, 255, 255, 0.78);
+}
+
+.ido-hero-sub {
+	margin: 0;
+	font-size: 1.05rem;
+	color: rgba(255, 255, 255, 0.8);
+	line-height: 1.7;
+	max-width: 34rem;
+}
+
+/* ── Main / form panel ── */
+.ido-guest-main {
+	position: relative;
+	margin-top: -42px;
+	padding: 0 clamp(16px, 4vw, 40px) 48px;
+	z-index: 2;
+}
+
+.ido-panel {
+	width: min(640px, 100%);
+	margin: 0 auto;
+	background: var(--ido-surface);
+	border-radius: var(--ido-radius);
+	padding: clamp(22px, 4vw, 34px);
+	box-shadow:
+		0 30px 80px rgba(0, 0, 0, 0.35),
+		0 0 0 1px rgba(255, 255, 255, 0.06);
+}
+
+.ido-panel-enter {
+	animation: ido-rise 0.9s 0.12s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+.ido-panel-head {
+	margin-bottom: 8px;
+	padding-bottom: 16px;
+	border-bottom: 1px solid var(--ido-line);
+}
+
+.ido-panel-head h2 {
+	margin: 0 0 6px;
+	font-size: 1.25rem;
+	font-weight: 700;
+	color: var(--ido-ink);
+}
+
+.ido-panel-head p {
+	margin: 0;
+	font-size: 0.9rem;
+	color: var(--ido-muted);
+	line-height: 1.6;
+}
+
+.ido-guest-form label {
+	display: block;
+	font-size: 0.82rem;
+	font-weight: 600;
+	color: #3a3148;
+	margin: 14px 0 6px;
+}
+
+.ido-guest-form {
+	--ido-control-h: 52px;
+	--ido-control-radius: 14px;
+	--ido-control-pad-x: 14px;
+	--ido-control-fs: 0.95rem;
+}
+
+.ido-guest-form input:not([type="checkbox"]):not([type="hidden"]),
+.ido-guest-form select,
+.ido-guest-form .ido-date-input,
+.ido-guest-form .flatpickr-input.ido-date-input,
+.ido-guest-btn {
+	width: 100%;
+	height: var(--ido-control-h);
+	min-height: var(--ido-control-h);
+	box-sizing: border-box;
+	border-radius: var(--ido-control-radius);
+	font-size: var(--ido-control-fs);
+	font-family: inherit;
+	line-height: 1.2;
+}
+
+.ido-guest-form input:not([type="checkbox"]):not([type="hidden"]),
+.ido-guest-form select,
+.ido-guest-form .ido-date-input,
+.ido-guest-form .flatpickr-input.ido-date-input {
+	border: 1px solid #e4dde8;
+	padding: 0 var(--ido-control-pad-x);
+	background: #fff;
+	color: var(--ido-ink);
+	transition: border-color 0.15s, box-shadow 0.15s, transform 0.15s;
+	appearance: none;
+	-webkit-appearance: none;
+}
+
+.ido-guest-form select {
+	background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20' fill='none' stroke='%235c2d91' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M5 7.5l5 5 5-5'/%3E%3C/svg%3E");
+	background-repeat: no-repeat;
+	background-position: left 14px center;
+	background-size: 16px;
+	padding-inline-end: 14px;
+	padding-inline-start: 40px;
+	cursor: pointer;
+}
+
+.ido-guest-form input:not([type="checkbox"]):not([type="hidden"]):focus,
+.ido-guest-form select:focus,
+.ido-guest-form .ido-date-input:focus {
+	outline: none;
+	border-color: var(--ido-brand);
+	box-shadow: 0 0 0 4px rgba(92, 45, 145, 0.14);
+}
+
+.ido-guest-grid {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	gap: 12px;
+}
+
+@media (max-width: 540px) {
+	.ido-guest-grid {
+		grid-template-columns: 1fr;
+	}
+
+	.ido-hero {
+		min-height: 420px;
+	}
+}
+
+.ido-guest-check {
+	display: flex !important;
+	gap: 14px;
+	align-items: flex-start;
+	margin: 20px 0 8px !important;
+	padding: 14px 16px;
+	border: 2px solid rgba(92, 45, 145, 0.28);
+	border-radius: 16px;
+	background: #f7f2fc;
+	cursor: pointer;
+	font-weight: 500 !important;
+	line-height: 1.55;
+	color: var(--ido-ink);
+	font-size: 0.9rem !important;
+	transition: border-color 0.15s, background 0.15s, box-shadow 0.15s;
+}
+
+.ido-guest-check:hover {
+	border-color: var(--ido-brand);
+	background: #f1e9fb;
+}
+
+.ido-guest-check:has(input:checked) {
+	border-color: var(--ido-brand);
+	background: #efe6fa;
+	box-shadow: 0 0 0 3px rgba(92, 45, 145, 0.12);
+}
+
+.ido-guest-check:has(input:focus-visible) {
+	box-shadow: 0 0 0 4px rgba(92, 45, 145, 0.2);
+}
+
+.ido-guest-check input {
+	position: absolute;
+	opacity: 0;
+	width: 1px !important;
+	height: 1px !important;
+	min-height: 0 !important;
+	margin: 0;
+	pointer-events: none;
+}
+
+.ido-check-box {
+	flex: 0 0 26px;
+	width: 26px;
+	height: 26px;
+	margin-top: 2px;
+	border: 2.5px solid var(--ido-brand);
+	border-radius: 8px;
+	background: #fff;
+	box-shadow: inset 0 0 0 0 var(--ido-brand);
+	position: relative;
+	transition: background 0.15s, border-color 0.15s, box-shadow 0.15s;
+}
+
+.ido-check-box::after {
+	content: "";
+	position: absolute;
+	inset: 4px;
+	border-radius: 3px;
+	background: transparent;
+	transform: scale(0);
+	transition: transform 0.15s ease;
+	background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='none' stroke='%23fff' stroke-width='2.4' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M3 8.2l3.2 3.2L13 4.5'/%3E%3C/svg%3E");
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: 14px;
+}
+
+.ido-guest-check input:checked + .ido-check-box {
+	background: var(--ido-brand);
+	border-color: var(--ido-brand);
+	box-shadow: 0 4px 12px rgba(92, 45, 145, 0.3);
+}
+
+.ido-guest-check input:checked + .ido-check-box::after {
+	transform: scale(1);
+	background-color: transparent;
+}
+
+.ido-check-text {
+	display: flex;
+	flex-direction: column;
+	gap: 4px;
+	min-width: 0;
+}
+
+.ido-check-text strong {
+	font-size: 0.95rem;
+	font-weight: 700;
+	color: var(--ido-brand);
+}
+
+.ido-check-text > span {
+	color: #4a4158;
+	font-size: 0.88rem;
+	line-height: 1.65;
+}
+
+.ido-guest-btn {
+	margin-top: 18px;
+	border: 0;
+	border-radius: 999px;
+	padding: 0 22px;
+	background: linear-gradient(135deg, var(--ido-brand) 0%, var(--ido-brand-deep) 100%);
+	color: #fff;
+	font-weight: 700;
+	cursor: pointer;
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	box-shadow: 0 12px 28px rgba(92, 45, 145, 0.35);
+	transition: transform 0.15s ease, box-shadow 0.15s ease, filter 0.15s;
+}
+
+.ido-guest-btn:hover:not(:disabled) {
+	transform: translateY(-1px);
+	filter: brightness(1.05);
+	box-shadow: 0 16px 34px rgba(92, 45, 145, 0.42);
+}
+
+.ido-guest-btn:disabled {
+	opacity: 0.7;
+	cursor: wait;
+}
+
+.ido-guest-hint {
+	text-align: center;
+	margin: 14px 0 0;
+	font-size: 12px;
+	color: #9a91a8;
+	letter-spacing: 0.02em;
+}
+
+.ido-guest-success {
+	text-align: center;
+	padding: 28px 8px 12px;
+}
+
+.ido-guest-success.show {
+	animation: ido-rise 0.55s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+.ido-success-mark {
+	width: 56px;
+	height: 56px;
+	margin: 0 auto 14px;
+	border-radius: 50%;
+	display: grid;
+	place-items: center;
+	background: linear-gradient(135deg, var(--ido-brand), var(--ido-brand-deep));
+	color: #fff;
+	font-size: 1.5rem;
+	font-weight: 700;
+	box-shadow: 0 12px 28px rgba(92, 45, 145, 0.35);
+}
+
+.ido-guest-success h2 {
+	margin: 0 0 8px;
+	color: var(--ido-brand);
+	font-size: 1.35rem;
+}
+
+.ido-guest-success p {
+	margin: 0;
+	color: var(--ido-muted);
+	line-height: 1.7;
+}
+
+.ido-guest-foot {
+	text-align: center;
+	padding: 28px 8px 8px;
+	color: rgba(255, 255, 255, 0.35);
+	font-size: 12px;
+	letter-spacing: 0.16em;
+	font-family: var(--ido-display);
+}
+
+/* ── KYC block ── */
+.ido-kyc-block {
+	margin-top: 22px;
+	padding: 18px 16px 8px;
+	border: 1px solid rgba(92, 45, 145, 0.16);
+	border-radius: 18px;
+	background: linear-gradient(180deg, #faf7ff 0%, #fff 70%);
+}
+
+.ido-kyc-head {
+	margin-bottom: 8px;
+	padding-bottom: 12px;
+	border-bottom: 1px dashed rgba(92, 45, 145, 0.18);
+}
+
+.ido-kyc-head h3 {
+	margin: 0 0 4px;
+	font-size: 1.05rem;
+	font-weight: 700;
+	color: var(--ido-brand);
+}
+
+.ido-kyc-head p {
+	margin: 0;
+	font-size: 0.86rem;
+	color: var(--ido-muted);
+	line-height: 1.55;
+}
+
+.ido-upload-grid {
+	display: grid;
+	grid-template-columns: 1.15fr 0.85fr;
+	gap: 14px;
+	margin: 14px 0 10px;
+	align-items: stretch;
+}
+
+.ido-upload-field {
+	min-width: 0;
+}
+
+.ido-upload-label {
+	display: block;
+	font-size: 0.82rem;
+	font-weight: 700;
+	color: #3a3148;
+	margin: 0 0 8px;
+}
+
+.ido-upload {
+	display: block;
+	cursor: pointer;
+	height: 100%;
+}
+
+.ido-upload input[type="file"] {
+	position: absolute;
+	opacity: 0;
+	width: 1px !important;
+	height: 1px !important;
+	min-height: 0 !important;
+	pointer-events: none;
+}
+
+.ido-upload-card {
+	position: relative;
+	display: block;
+	height: 100%;
+	min-height: 210px;
+	border-radius: 18px;
+	overflow: hidden;
+	background:
+		radial-gradient(circle at 20% 15%, rgba(92, 45, 145, 0.08), transparent 45%),
+		#fff;
+	border: 1.5px dashed rgba(92, 45, 145, 0.32);
+	box-shadow: 0 10px 28px rgba(40, 20, 70, 0.05);
+	transition: border-color 0.18s, box-shadow 0.18s, transform 0.18s, background 0.18s;
+}
+
+.ido-upload:hover .ido-upload-card {
+	border-color: var(--ido-brand);
+	box-shadow: 0 14px 32px rgba(92, 45, 145, 0.14);
+	transform: translateY(-2px);
+}
+
+.ido-upload.is-filled .ido-upload-card {
+	border-style: solid;
+	border-color: var(--ido-brand);
+	background: #1a1028;
+}
+
+.ido-upload-empty,
+.ido-upload-filled {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	text-align: center;
+	padding: 22px 16px;
+	min-height: 210px;
+	box-sizing: border-box;
+}
+
+.ido-upload-filled {
+	display: none;
+	padding: 0;
+	position: relative;
+}
+
+.ido-upload.is-filled .ido-upload-empty {
+	display: none;
+}
+
+.ido-upload.is-filled .ido-upload-filled {
+	display: flex;
+}
+
+.ido-upload-icon {
+	width: 56px;
+	height: 56px;
+	border-radius: 16px;
+	display: grid;
+	place-items: center;
+	margin-bottom: 12px;
+	color: var(--ido-brand);
+	background: linear-gradient(145deg, #efe6fa, #f8f4ff);
+	border: 1px solid rgba(92, 45, 145, 0.12);
+}
+
+.ido-upload-icon svg {
+	width: 30px;
+	height: 30px;
+}
+
+.ido-upload-icon--face {
+	border-radius: 50%;
+}
+
+.ido-upload-title {
+	font-size: 0.92rem;
+	font-weight: 700;
+	color: var(--ido-ink);
+	line-height: 1.45;
+	margin-bottom: 4px;
+	padding: 0 4px;
+}
+
+.ido-upload-hint {
+	font-size: 0.78rem;
+	color: var(--ido-muted);
+	line-height: 1.5;
+	margin-bottom: 14px;
+	max-width: 16rem;
+}
+
+.ido-upload-cta {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	height: 36px;
+	padding: 0 16px;
+	border-radius: 999px;
+	background: linear-gradient(135deg, var(--ido-brand), var(--ido-brand-deep));
+	color: #fff;
+	font-size: 0.82rem;
+	font-weight: 700;
+	box-shadow: 0 8px 18px rgba(92, 45, 145, 0.28);
+}
+
+.ido-upload-preview {
+	width: 100%;
+	height: 210px;
+	object-fit: cover;
+	display: block;
+	background: #111;
+}
+
+.ido-upload--face .ido-upload-card {
+	min-height: 210px;
+}
+
+.ido-upload--face .ido-upload-preview {
+	width: 148px;
+	height: 148px;
+	border-radius: 50%;
+	margin: 28px auto 18px;
+	object-fit: cover;
+	border: 3px solid rgba(255, 255, 255, 0.9);
+	box-shadow: 0 12px 28px rgba(0, 0, 0, 0.35);
+}
+
+.ido-upload--face .ido-upload-filled {
+	background:
+		radial-gradient(circle at 50% 30%, rgba(92, 45, 145, 0.45), transparent 55%),
+		#1a1028;
+	min-height: 210px;
+}
+
+.ido-upload-badge {
+	position: absolute;
+	top: 12px;
+	inset-inline-start: 12px;
+	padding: 4px 10px;
+	border-radius: 999px;
+	background: rgba(255, 255, 255, 0.92);
+	color: var(--ido-brand);
+	font-size: 11px;
+	font-weight: 700;
+	z-index: 2;
+}
+
+.ido-upload-change {
+	position: absolute;
+	left: 50%;
+	bottom: 14px;
+	transform: translateX(-50%);
+	padding: 7px 14px;
+	border-radius: 999px;
+	background: rgba(255, 255, 255, 0.94);
+	color: var(--ido-ink);
+	font-size: 0.78rem;
+	font-weight: 700;
+	white-space: nowrap;
+	z-index: 2;
+	box-shadow: 0 6px 16px rgba(0, 0, 0, 0.18);
+}
+
+.ido-upload--passport .ido-upload-preview {
+	height: 210px;
+}
+
+.ido-upload--passport .ido-upload-change {
+	bottom: 14px;
+}
+
+@media (max-width: 540px) {
+	.ido-upload-grid {
+		grid-template-columns: 1fr;
+	}
+
+	.ido-upload-card,
+	.ido-upload-empty,
+	.ido-upload-preview,
+	.ido-upload--passport .ido-upload-preview {
+		min-height: 190px;
+	}
+
+	.ido-upload--passport .ido-upload-preview {
+		height: 190px;
+	}
+}
+
+@keyframes ido-rise {
+	from {
+		opacity: 0;
+		transform: translateY(18px);
+	}
+	to {
+		opacity: 1;
+		transform: translateY(0);
+	}
+}
+
+@keyframes ido-ken {
+	from {
+		transform: scale(1.04) translate3d(0, 0, 0);
+	}
+	to {
+		transform: scale(1.1) translate3d(-1.5%, 1%, 0);
+	}
+}
+
+@media (prefers-reduced-motion: reduce) {
+	.ido-hero-media,
+	.ido-hero-inner,
+	.ido-panel-enter,
+	.ido-guest-success.show {
+		animation: none !important;
+	}
+}
+
+/* ── Date of birth picker ── */
+.ido-date-wrap {
+	position: relative;
+}
+
+.ido-date-wrap .ido-date-input,
+.ido-guest-form .ido-date-input.flatpickr-input,
+.ido-guest-form input.ido-date-input {
+	width: 100%;
+	height: var(--ido-control-h);
+	min-height: var(--ido-control-h);
+	cursor: pointer;
+	padding-inline-end: 44px;
+	background: #fff;
+}
+
+.ido-guest-form .flatpickr-input[type="hidden"],
+.ido-guest-form input.flatpickr-input[readonly]:not(.ido-date-input) {
+	/* keep native hidden value field out of layout when altInput is used */
+}
+
+.ido-date-icon {
+	position: absolute;
+	top: 50%;
+	inset-inline-end: 14px;
+	width: 18px;
+	height: 18px;
+	transform: translateY(-50%);
+	pointer-events: none;
+	background: no-repeat center / contain;
+	background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%235c2d91' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'%3E%3Crect x='3' y='5' width='18' height='16' rx='3'/%3E%3Cpath d='M3 10h18M8 3v4M16 3v4'/%3E%3C/svg%3E");
+	opacity: 0.85;
+}
+
+.flatpickr-calendar.ido-fp {
+	font-family: var(--ido-font);
+	direction: rtl;
+	border: none;
+	border-radius: 18px;
+	box-shadow:
+		0 22px 50px rgba(26, 16, 40, 0.22),
+		0 0 0 1px rgba(92, 45, 145, 0.1);
+	padding: 10px 8px 12px;
+	width: 320px;
+	overflow: hidden;
+	animation: ido-rise 0.22s ease;
+}
+
+.flatpickr-calendar.ido-fp:before,
+.flatpickr-calendar.ido-fp:after {
+	display: none;
+}
+
+.flatpickr-calendar.ido-fp .flatpickr-months {
+	padding: 4px 4px 8px;
+	align-items: center;
+}
+
+.flatpickr-calendar.ido-fp .flatpickr-month {
+	height: 40px;
+	color: var(--ido-ink);
+}
+
+.flatpickr-calendar.ido-fp .flatpickr-current-month {
+	font-size: 15px;
+	font-weight: 700;
+	padding-top: 6px;
+	display: flex;
+	justify-content: center;
+	gap: 6px;
+}
+
+.flatpickr-calendar.ido-fp .flatpickr-current-month .flatpickr-monthDropdown-months,
+.flatpickr-calendar.ido-fp .numInputWrapper {
+	border-radius: 10px;
+	background: #f4f0fa;
+	font-family: inherit;
+	font-weight: 700;
+}
+
+.flatpickr-calendar.ido-fp .flatpickr-current-month .flatpickr-monthDropdown-months {
+	padding: 4px 8px;
+	appearance: none;
+	border: 0;
+}
+
+.flatpickr-calendar.ido-fp .numInputWrapper {
+	padding: 2px 4px;
+}
+
+.flatpickr-calendar.ido-fp .numInputWrapper input {
+	font-weight: 700;
+	color: var(--ido-ink);
+}
+
+.flatpickr-calendar.ido-fp .flatpickr-prev-month,
+.flatpickr-calendar.ido-fp .flatpickr-next-month {
+	fill: var(--ido-brand);
+	padding: 8px;
+	border-radius: 10px;
+}
+
+.flatpickr-calendar.ido-fp .flatpickr-prev-month:hover,
+.flatpickr-calendar.ido-fp .flatpickr-next-month:hover {
+	background: #f4f0fa;
+}
+
+.flatpickr-calendar.ido-fp .flatpickr-prev-month svg,
+.flatpickr-calendar.ido-fp .flatpickr-next-month svg {
+	width: 14px;
+	height: 14px;
+}
+
+.flatpickr-calendar.ido-fp .flatpickr-weekdays {
+	margin-top: 2px;
+}
+
+.flatpickr-calendar.ido-fp .flatpickr-weekday {
+	color: var(--ido-muted);
+	font-weight: 700;
+	font-size: 12px;
+}
+
+.flatpickr-calendar.ido-fp .flatpickr-days {
+	width: 100%;
+}
+
+.flatpickr-calendar.ido-fp .dayContainer {
+	width: 100%;
+	min-width: 100%;
+	max-width: 100%;
+}
+
+.flatpickr-calendar.ido-fp .flatpickr-day {
+	border-radius: 12px;
+	height: 40px;
+	line-height: 40px;
+	max-width: 40px;
+	margin: 1px auto;
+	color: var(--ido-ink);
+	font-weight: 500;
+	border: none;
+}
+
+.flatpickr-calendar.ido-fp .flatpickr-day:hover,
+.flatpickr-calendar.ido-fp .flatpickr-day:focus {
+	background: #efe8f8;
+	border-color: transparent;
+	color: var(--ido-brand);
+}
+
+.flatpickr-calendar.ido-fp .flatpickr-day.today {
+	border: 1.5px solid var(--ido-brand);
+	font-weight: 700;
+}
+
+.flatpickr-calendar.ido-fp .flatpickr-day.selected,
+.flatpickr-calendar.ido-fp .flatpickr-day.selected:hover {
+	background: linear-gradient(135deg, var(--ido-brand), var(--ido-brand-deep));
+	color: #fff;
+	box-shadow: 0 8px 18px rgba(92, 45, 145, 0.35);
+}
+
+.flatpickr-calendar.ido-fp .flatpickr-day.flatpickr-disabled,
+.flatpickr-calendar.ido-fp .flatpickr-day.prevMonthDay,
+.flatpickr-calendar.ido-fp .flatpickr-day.nextMonthDay {
+	color: #c5bfd0;
+}
+
+.flatpickr-calendar.ido-fp .flatpickr-day.inRange,
+.flatpickr-calendar.ido-fp .flatpickr-day.startRange,
+.flatpickr-calendar.ido-fp .flatpickr-day.endRange {
+	box-shadow: none;
+}
+

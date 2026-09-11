@@ -1,0 +1,1238 @@
+(Audit),(تدقيق)
+(أمان/PDPL),(أمان/حماية البيانات)
+Academy Schedule,جدول الأكاديمية
+Accent Colour,لون التمييز
+accepted,مقبول
+Access Code,رمز الدخول
+Access Scope,نطاق الدخول
+acknowledged,مُقرّ به
+Action,إجراء
+action,إجراء
+Actions,إجراءات
+actions,إجراءات
+Active,نشط
+active,نشط
+Activity Level,مستوى النشاط
+Activity Service,خدمة النشاط
+Activity Service Fee,رسوم خدمة النشاط
+Add,إضافة
+add,إضافة
+Add event days first,أضف أيام الفعالية أولًا
+Add or remove services from the catalogue. Tasks are generated per service on payment.,أضف أو احذف خدمات من الكتالوج. تُنشأ المهام لكل خدمة عند الدفع.
+Add session,إضافة جلسة
+"Add several sections to the same day — e.g. Morning, Lunch, Afternoon, Gala. Sessions are grouped under the section whose time range contains them.",أضف عدة أقسام لنفس اليوم — مثلًا صباح، غداء، بعد الظهر، حفل. تُجمَّع الجلسات تحت القسم الذي يقع ضمن نطاقه الزمني.
+Address,العنوان
+address,العنوان
+advance,تقديم
+Advance Stage,تقديم المرحلة
+Advanced via the journey gate engine — use the Advance Stage / Override buttons,يُقدَّم عبر محرك بوابات الرحلة — استخدم أزرار تقديم المرحلة / التجاوز
+africa,أفريقيا
+afternoon,بعد الظهر
+Agenda,جدول الفعالية
+agenda,جدول الفعالية
+Agenda as PDF attachment,جدول الفعالية كمرفق مستند
+Agenda by Day,جدول الفعالية حسب اليوم
+Agenda Email Language,لغة بريد جدول الفعالية
+Agenda Email Layout,تخطيط بريد جدول الفعالية
+Agenda Email Preview,معاينة بريد جدول الفعالية
+Agenda is hidden for this event,جدول الفعالية مخفي لهذه الفعالية
+Agenda is hidden for this event — not sent,جدول الفعالية مخفي لهذه الفعالية — لم يُرسل
+Agenda Layout,تخطيط جدول الفعالية
+Agenda PDF sent,أُرسل مستند جدول الفعالية
+Agenda Section,قسم جدول الفعالية
+Agenda Sections (multiple per day),أقسام جدول الفعالية (عدة أقسام لليوم)
+Agenda sent,أُرسل جدول الفعالية
+Agenda sent as a separate email,أُرسل جدول الفعالية في بريد منفصل
+Agenda sent with the invitation,أُرسل جدول الفعالية مع الدعوة
+Agenda Tasks,مهام جدول الفعالية
+Agenda tasks,مهام جدول الفعالية
+Airline,شركة الطيران
+airline,شركة الطيران
+Airport → Hotel,المطار ← الفندق
+airport_desk,مكتب المطار
+airport_transfer,نقل من المطار
+Alert Type,نوع البلاغ
+All events,كل الفعاليات
+Allow Reminder,السماح بالتذكير
+Amount,الإجمالي
+amount,الإجمالي
+apac,آسيا والمحيط الهادئ
+Application #,رقم الطلب
+approved,معتمد
+Approved Accreditations,الاعتمادات المعتمدة
+Approved By,اعتمد بواسطة
+ar,العربية
+Arabic,العربية
+arabic,العربية
+Archived,مؤرشف
+archived,مؤرشف
+Arrival,وصول
+arrival,وصول
+Arrival & Transport,الوصول والنقل
+Arrival Confirmed,تأكيد الوصول
+Arrival Terminal,صالة الوصول
+Arrivals Today,الوصول اليوم
+Arrived,وصل
+arrived,وصل
+Assign to me,أسند إليّ
+assigned,مُسند
+Assigned Driver,السائق المعيّن
+Assigned To,مُسند إلى
+Assigned to {0} member(s): {1},أُسند إلى {0} عضو/أعضاء: {1}
+Assignee cleared — not a member of this team,أُزيل الإسناد — ليس عضوًا في هذا الفريق
+Assistant,مساعد
+assistant,مساعد
+At,في
+at,في
+"Attach the agenda to the invitation, send it as a separate email, or skip it.",أرفق الجدول بالدعوة، أو أرسله ببريد منفصل، أو تخطَّه.
+Attendance,الحضور
+attendance,الحضور
+Audience,الجمهور
+audience,الجمهور
+auto,تلقائي
+Auto-create portal user on guest registration,إنشاء مستخدم بوابة تلقائيًا عند تسجيل الضيف
+Auto-filled from the session when linked,يُملأ تلقائيًا من الجلسة عند الربط
+Auto-send on stage,إرسال تلقائي عند المرحلة
+availability_checked,تم التحقق من التوفر
+available,متاح
+Available Hours,الساعات المتاحة
+Available Seats,المقاعد المتاحة
+Awaiting Payment,بانتظار الدفع
+Badge,بطاقة الدخول
+badge,بطاقة الدخول
+Badge Language,لغة بطاقة الدخول
+Badge PDF,مستند بطاقة الدخول
+Badge Preview,معاينة بطاقة الدخول
+Badge Queue,طابور بطاقات الدخول
+Badge requires hotel check-in (BR-007),بطاقة الدخول تتطلب تسجيل دخول الفندق (قاعدة العمل 007)
+Badge State,حالة بطاقة الدخول
+Badge Type,نوع بطاقة الدخول
+badge_ready,بطاقة الدخول جاهزة
+badge_reprint,إعادة طباعة بطاقة الدخول
+badge_team,فريق بطاقات الدخول
+Badges Ready,بطاقات الدخول جاهزة
+Banquet,حفل عشاء
+banquet,حفل عشاء
+Basic,أساسي
+basic,أساسي
+Basic Setup,الإعداد الأساسي
+bilateral,ثنائي
+Bilateral meetings,اجتماعات ثنائية
+Bio,نبذة
+bio,نبذة
+Bio (AR),النبذة (العربية)
+Blank = use the service default,فارغ = استخدام الإعداد الافتراضي للخدمة
+blocked,محظور
+Boardroom,قاعة اجتماعات
+boardroom,قاعة اجتماعات
+Body (AR),النص (العربية)
+Body (EN),النص (الإنجليزية)
+Body (FR),النص (الفرنسية)
+Booking Confirmation #,رقم تأكيد الحجز
+both,كلاهما
+BR-001:,قاعدة العمل 001:
+BR-002:,قاعدة العمل 002:
+BR-002: لا يمكن بدء التأشيرة قبل اعتماد KYC.,قاعدة العمل 002: لا يمكن بدء التأشيرة قبل اعتماد التحقق من الهوية.
+BR-002: لا يمكن تجاوز اعتماد KYC — حجب صارم (أمان/PDPL).,قاعدة العمل 002: لا يمكن تجاوز اعتماد التحقق من الهوية — حجب صارم (أمان/حماية البيانات).
+BR-004:,قاعدة العمل 004:
+BR-004: لا يمكن طلب الطيران قبل اعتماد التأشيرة.,قاعدة العمل 004: لا يمكن طلب الطيران قبل اعتماد التأشيرة.
+BR-005:,قاعدة العمل 005:
+BR-005: لا يمكن إسناد السائق قبل تأكيد الوصول.,قاعدة العمل 005: لا يمكن إسناد السائق قبل تأكيد الوصول.
+BR-006:,قاعدة العمل 006:
+BR-006: لا يمكن تسجيل دخول الفندق قبل وصول رحلة النقل.,قاعدة العمل 006: لا يمكن تسجيل دخول الفندق قبل وصول رحلة النقل.
+BR-007:,قاعدة العمل 007:
+BR-007: لا يمكن إصدار البادج قبل تسجيل دخول الفندق.,قاعدة العمل 007: لا يمكن إصدار بطاقة الدخول قبل تسجيل دخول الفندق.
+BR-009:,قاعدة العمل 009:
+BR-009: التجاوز يتطلب سببًا مُسجّلًا (Audit).,قاعدة العمل 009: التجاوز يتطلب سببًا مُسجّلًا (تدقيق).
+Branch,فرع
+branch,فرع
+Branch Activity,نشاط الفرع
+Branch Activity Level,مستوى نشاط الفرع
+Branches and Facilities,الفروع والمنشآت
+break,استراحة
+Broadcast,بث
+broadcast,بث
+Build Audience,بناء الجمهور
+Business,أعمال
+business,أعمال
+Business Visa,تأشيرة عمل
+By,بواسطة
+by,بواسطة
+Calendar,التقويم
+calendar,التقويم
+cancelled,ملغى
+Capacity,السعة
+capacity,السعة
+car_with_driver,سيارة مع سائق
+cart,عربة
+Category,الفئة
+category,الفئة
+ceremony,حفل
+Channel,القناة
+channel,القناة
+Check Conflicts,فحص التعارضات
+Check-in Date,تاريخ تسجيل الدخول
+Check-in State,حالة تسجيل الدخول
+Check-out Date,تاريخ المغادرة
+check_in_started,جارٍ التسجيل
+Checked In At,وقت تسجيل الدخول
+Checked In By,سجّل الدخول بواسطة
+Checked Out At,وقت المغادرة
+checked_in,سجّل الدخول
+checked_out,غادر
+Checksum,المجموع الاختباري
+checksum,المجموع الاختباري
+Child,طفل
+child,طفل
+City,المدينة
+city,المدينة
+Class,فئة
+class,فئة
+Classroom,قاعة تدريب
+classroom,قاعة تدريب
+Clear filter,مسح التصفية
+cleared,أُخلي
+Cleared At,وقت الإخلاء
+closed,مغلق
+closed_out,مغلق
+Club,نادي
+club,نادي
+collected,مُستلم
+Collected At,وقت الاستلام
+Comments,تعليقات
+comments,تعليقات
+Commercial,تجاري
+commercial,تجاري
+comms,تواصل
+Comms & Playbook,التواصل ودليل التشغيل
+compact_list,قائمة مختصرة
+Companions,المرافقون
+companions,المرافقون
+Completed,مكتمل
+completed,مكتمل
+Completed At,وقت الإنجاز
+Completed By,أنجزها
+Completed Tasks,المهام المكتملة
+confirmed,مؤكد
+Confirmed Bilaterals,الاجتماعات الثنائية المؤكدة
+Confirmed By,أكّد بواسطة
+Confirmed Delegations,الوفود المؤكدة
+Confirmed Guests,الضيوف المؤكدون
+Consent (PDPL),الموافقة (حماية البيانات الشخصية)
+Consent At,وقت الموافقة
+Consented to data processing (PDPL),تمت الموافقة على معالجة البيانات (حماية البيانات الشخصية)
+Contact,جهة اتصال
+contact,جهة اتصال
+Contact Person,شخص الاتصال
+Contact Phone,هاتف الاتصال
+contacted,تم الاتصال
+Content,المحتوى
+content,المحتوى
+core,أساسي
+Could not find Guest: {0},تعذر العثور على الضيف: {0}
+Country,الدولة
+country,الدولة
+Cover Image,صورة الغلاف
+Created: {0} · Failed: {1},أُنشئ: {0} · فشل: {1}
+Currency,العملة
+currency,العملة
+custom,مخصص
+Customer,عميل
+customer,عميل
+daily_transport,نقل يومي
+Dashboards,لوحات المؤشرات
+dashboards,لوحات المؤشرات
+Date,التاريخ
+date,التاريخ
+Date of Birth,تاريخ الميلاد
+Day,يوم
+day,يوم
+Day #,رقم اليوم
+day rows not created yet,لم تُنشأ صفوف الأيام بعد
+Day −1 (وصول مبكر),اليوم −1 (وصول مبكر)
+day1,اليوم 1
+day2,اليوم 2
+day3,اليوم 3
+day_minus_1,اليوم التمهيدي
+day_tables,جداول الأيام
+Days,أيام
+days,أيام
+declined,مرفوض
+Default (Active) Event,الفعالية الافتراضية (النشطة)
+Delegate,مندوب
+delegate,مندوب
+Delegation,وفد
+delegation,وفد
+Delegation Name,اسم الوفد
+Delivery,تسليم
+delivery,تسليم
+Deluxe,فاخر
+deluxe,فاخر
+Departure,مغادرة
+departure,المغادرة
+Departure City,مدينة المغادرة
+Departure Country,دولة المغادرة
+Description,الوصف
+description,الوصف
+Description (AR),الوصف (العربية)
+Description (EN),الوصف (الإنجليزية)
+Desk,مكتب
+desk,مكتب
+Destination,الوجهة
+destination,الوجهة
+Destination Hotel,فندق الوجهة
+Details,التفاصيل
+details,التفاصيل
+Dietary Requirements,المتطلبات الغذائية
+Diplomatic,دبلوماسي
+diplomatic,دبلوماسي
+Direct Payment,دفع مباشر
+Distance to Venue (km),المسافة إلى المكان (كم)
+docs_required,مستندات مطلوبة
+Documents,المستندات
+documents,المستندات
+Documents requested from guest,مستندات مطلوبة من الضيف
+done,منجز
+Download Agenda PDF,تنزيل مستند جدول الفعالية
+Draft,مسودة
+draft,مسودة
+Driver,سائق
+driver,سائق
+Driver Name,اسم السائق
+Due,موعد الاستحقاق
+due,موعد الاستحقاق
+Due From,من تاريخ
+Due To,إلى تاريخ
+Economy,اقتصادي
+economy,اقتصادي
+Email,البريد الإلكتروني
+email,بريد إلكتروني
+Email Account,حساب البريد
+Email agenda on registration,إرسال جدول الفعالية عند التسجيل
+Email Template,قالب البريد
+Email the agenda as a PDF attachment to every registered guest?,إرسال جدول الفعالية كمرفق مستند لكل ضيف مسجل؟
+Email Verified (OTP),البريد موثّق (رمز لمرة واحدة)
+Emergency Contact,جهة اتصال للطوارئ
+Emergency Contact (name & phone),جهة اتصال للطوارئ (الاسم والجوال)
+Emergency Contacts,جهات اتصال الطوارئ
+en,الإنجليزية
+en_route,في الطريق
+Enabled,مفعّل
+enabled,مفعّل
+End,النهاية
+end,النهاية
+End Date,تاريخ النهاية
+Enforce lifecycle gates (BR-001…BR-007),فرض بوابات دورة الحياة (قواعد العمل 001–007)
+English,الإنجليزية
+english,الإنجليزية
+ERC Accreditation,اعتماد مشترك
+ERC Accreditation Status,حالة الاعتماد المشترك
+ERC Negotiated Rate / Night,السعر المتفاوض عليه / ليلة
+ERPNext Core / الأساسيات,الأساسيات
+Error,خطأ
+error,خطأ
+europe,أوروبا
+evening,مساء
+Event,فعالية
+event,فعالية
+Event Code,رمز الفعالية
+Event context,سياق الفعالية
+Event Day,يوم الفعالية
+Event Name (AR),اسم الفعالية (العربية)
+Event Name (EN),اسم الفعالية (الإنجليزية)
+Event Setup,إعداد الفعالية
+Event Team,فريق الفعالية
+Event Visa,تأشيرة الفعالية
+event_manager,مدير الفعالية
+Exempt,معفى
+exempt,معفى
+Exhibition,معرض
+exhibition,معرض
+exhibition_only,المعرض فقط
+expected,متوقع
+Expected Arrival,الوصول المتوقع
+Expected Guests,الضيوف المتوقعون
+expired,منتهٍ
+Expires At,ينتهي في
+extra_night,ليلة إضافية
+Face / Selfie,صورة الوجه
+Facility Booking,حجز منشأة
+Facility Booking Fee,رسوم حجز المنشأة
+failed,فشل
+Fees and Pricing,الرسوم والأسعار
+Female,أنثى
+female,أنثى
+Field Ops,التشغيل الميداني
+File,ملف
+file,ملف
+Filter by event,تصفية حسب الفعالية
+finance,المالية
+First,الأول
+first,الأول
+First Name,الاسم الأول
+"Fix the overlaps first, or continue if they are intentional.",أصلح التعارضات أولًا، أو تابع إن كانت مقصودة.
+Flight,رحلة طيران
+flight,رحلة طيران
+Flight Booking,حجز طيران
+Flight Number,رقم الرحلة
+Flight Status,حالة الرحلة
+Flight ticket,تذكرة طيران
+Flight Tickets,تذاكر الطيران
+flight_requested,طُلب الطيران
+Floor,الطابق
+floor,الطابق
+flying,في الجو
+From,من
+from,من
+fulfilled,مُنفَّذ
+Full day,يوم كامل
+Full Name,الاسم الكامل
+Full Name (AR),الاسم الكامل (العربية)
+full_event,الفعالية كاملة
+gala,حفل رسمي
+Gala dinner,حفل العشاء
+gala_only,الحفل الرسمي فقط
+gcc,التعاون الخليجي
+gcc_me,التعاون الخليجي
+Gender,الجنس
+gender,الجنس
+general,عام
+Generate anyway,إنشاء على أي حال
+Generate Tasks,إنشاء المهام
+Generated Task,المهمة المرتبطة
+Generating PDF…,جاري إنشاء المستند…
+GPS,نظام تحديد المواقع
+gps,نظام تحديد المواقع
+Granted,مُنح
+granted,مُنح
+Granted At,مُنح في
+group_photo,صورة جماعية
+Guest,ضيف
+guest,ضيف
+guest and status required,الضيف والحالة مطلوبان
+Guest Hotel Check-in,تسجيل دخول الضيف للفندق
+Guest Journey,رحلة الضيف
+Guest Journey Rules,قواعد رحلة الضيف
+Guest KYC,التحقق من هوية الضيف
+Guest Management,إدارة الضيوف
+Guest Name,اسم الضيف
+Guest Portal Base URL,رابط بوابة الضيف الأساسي
+guest required,الضيف مطلوب
+Guest Services,خدمات الضيف
+Guest Trip State,حالة رحلة الضيف
+Guest Type,نوع الضيف
+Guest Visa,تأشيرة الضيف
+guest_arrived,الضيف وصل
+guest_language,لغة الضيف
+Guests,الضيوف
+guests,الضيوف
+Hall,قاعة
+hall,قاعة
+Halls,القاعات
+halls,القاعات
+Head of Delegation,رئيس الوفد
+Head-and-shoulders photo used on the badge.,صورة شخصية تُستخدم على بطاقة الدخول.
+head_of_delegation,رئيس الوفد
+Help,مساعدة
+help,مساعدة
+Hidden from public registration — only selectable on the Invitation form.,مخفي عن التسجيل العام — يُختار فقط من نموذج الدعوة.
+High,عالية
+high,عالية
+Holder Name,اسم الحامل
+Host,مضيف
+host,مضيف
+Host Organization,المنظمة المضيفة
+Hotel,فندق
+hotel,فندق
+Hotel & Badges,الفندق وبطاقات الدخول
+Hotel accommodation,إقامة فندقية
+Hotel Booking,حجز فندق
+Hotel Check-in,تسجيل دخول الفندق
+Hotel Checked In,تم تسجيل الدخول للفندق
+Hotel Name,اسم الفندق
+Hotel Name (AR),اسم الفندق (العربية)
+Hotel → Airport,الفندق ← المطار
+Hotel → Venue,الفندق ← مكان الفعالية
+hotel_checkin,تسجيل دخول الفندق
+hotel_desk,مكتب الفندق
+housekeeping,تدبير منزلي
+Icon,أيقونة
+icon,أيقونة
+Identity,الهوية
+identity,الهوية
+IDO Accreditation,اعتماد
+IDO Accreditation Officer,مسؤول الاعتماد
+IDO Agenda Section,قسم جدول الفعالية
+IDO Airport Desk,مكتب المطار
+IDO Arrival,وصول
+IDO Arrivals by Status,الوصول حسب الحالة
+IDO Attendance,حضور
+IDO Badge,بطاقة الدخول
+IDO Badge Card,بطاقة الدخول
+IDO Badge Queue,طابور بطاقات الدخول
+IDO Badge Team,فريق بطاقات الدخول
+IDO Bilateral by Status,الاجتماعات الثنائية حسب الحالة
+IDO Bilateral Meeting,اجتماع ثنائي
+IDO Broadcast,بث
+IDO Broadcast Recipient,مستلم البث
+IDO Commercial,تجاري
+IDO Comms Template,قالب التواصل
+IDO Consent Purpose,غرض الموافقة
+IDO Delegation,وفد
+IDO Delegations by Type,الوفود حسب النوع
+IDO Demo Request,طلب عرض توضيحي
+IDO Driver,سائق
+IDO Emergency Alert,تنبيه طارئ
+IDO Emergency Contact,جهة اتصال للطوارئ
+IDO Event,فعالية
+IDO Event Day,يوم الفعالية
+IDO Event Manager,مدير الفعالية
+IDO Event Planner,مخطط الفعالية
+IDO Event Settings,إعدادات الفعالية
+IDO Event Team Member,عضو فريق الفعالية
+IDO Event — من الدعوة إلى العودة,من الدعوة إلى العودة
+IDO Events,الفعاليات
+IDO Flight Companion,مرافق رحلة
+IDO Flight Request,طلب طيران
+IDO Flight Status,حالة الرحلة
+IDO Guest,ضيف
+IDO Guest Agenda Item,بند جدول الضيف
+IDO Guest Companion,مرافق الضيف
+IDO Guest Feedback,تقييم الضيف
+IDO Guest Funnel,قمع الضيوف
+IDO Guest Interest,اهتمام الضيف
+IDO Guest Journey,رحلة الضيف
+IDO Guest Services,خدمات الضيف
+IDO Guests by Category,الضيوف حسب الفئة
+IDO Guests by Funding,الضيوف حسب التمويل
+IDO Guests by Nationality,الضيوف حسب الجنسية
+IDO Guests by Region,الضيوف حسب المنطقة
+IDO Guests by Stage,الضيوف حسب المرحلة
+IDO Hotel,فندق
+IDO Hotel Desk,مكتب الفندق
+IDO Hotel Occupancy,إشغال الفندق
+IDO Hotel Room,غرفة فندق
+IDO Hotel Stay,إقامة فندقية
+IDO Hotel Stay Status,حالة الإقامة الفندقية
+IDO Interest,اهتمام
+IDO Invitation,دعوة
+IDO KYC Status,حالة التحقق من الهوية
+IDO KYC Verification,التحقق من الهوية
+IDO Liaison Host,مضيف ارتباط
+IDO Operations,العمليات
+IDO Operations & Tasks,العمليات والمهام
+IDO Order Item,بند طلب
+IDO Organizer,منظم
+IDO Owner,المالك
+IDO Package,باقة
+IDO Package Inclusion,مشمولات الباقة
+IDO Package Service,خدمة الباقة
+IDO Play,تشغيل
+IDO Playbook Item,بند دليل التشغيل
+IDO Programme & Protocol,البرنامج والبروتوكول
+IDO Protocol Desk,مكتب البروتوكول
+IDO QR Pass,تصريح الدخول
+IDO Registration,تسجيل
+IDO Registrations by Status,التسجيلات حسب الحالة
+IDO Registrations by Type,التسجيلات حسب النوع
+IDO Revenue by Package,الإيرادات حسب الباقة
+IDO Revenue by Status,الإيرادات حسب الحالة
+IDO Security Vetting,فحص أمني
+IDO Service Request,طلب خدمة
+IDO Service Requests by Type,طلبات الخدمة حسب النوع
+IDO Session,جلسة
+IDO Session Speaker,متحدث الجلسة
+IDO Sessions by Hall,الجلسات حسب القاعة
+IDO Sessions by Track,الجلسات حسب المسار
+IDO Speaker,متحدث
+IDO Stage Log,سجل المرحلة
+IDO Support by Category,الدعم حسب الفئة
+IDO Support Ticket,تذكرة دعم
+IDO Task,مهمة
+IDO Tasks by Priority,المهام حسب الأولوية
+IDO Tasks by Status,المهام حسب الحالة
+IDO Tasks by Team,المهام حسب الفريق
+IDO Ticket,تذكرة
+IDO Ticket Revenue,إيرادات التذاكر
+IDO Ticket Sales,مبيعات التذاكر
+IDO Ticket Type,نوع التذكرة
+IDO Tickets by Status,التذاكر حسب الحالة
+IDO Tickets by Type,التذاكر حسب النوع
+IDO Transport Trip,رحلة نقل
+IDO Travel & Logistics,السفر واللوجستيات
+IDO Travel Team,فريق السفر
+IDO Trips by State,الرحلات حسب الحالة
+IDO Usher,مرشد
+IDO Venue,مكان الفعالية
+IDO Venue Hall,قاعة المكان
+IDO Venue Manager,مدير المكان
+IDO Visa Application,طلب تأشيرة
+IDO Visa Document,مستند تأشيرة
+IDO Visa Status,حالة التأشيرة
+IDO Visa Team,فريق التأشيرات
+in_progress,قيد التنفيذ
+in_review,قيد المراجعة
+in_transit,في النقل
+Included Services,الخدمات المشمولة
+Inclusions,ما تشمله الباقة
+inclusions,ما تشمله الباقة
+Insufficient permission,صلاحية غير كافية
+Interest,اهتمام
+interest,اهتمام
+Interest (AR),الاهتمام (العربية)
+Interests,الاهتمامات
+interests,الاهتمامات
+Internal Notes,ملاحظات داخلية
+International Organization,منظمة دولية
+Interpreter,مترجم فوري
+interpreter,مترجم فوري
+intl_org_rep,ممثل منظمة دولية
+Intro (AR),المقدمة (العربية)
+Intro (EN),المقدمة (الإنجليزية)
+investment,استثمار
+Invitation Code,رمز الدعوة
+Invitation Letter,خطاب الدعوة
+Invitation only,بالدعوة فقط
+invited,مدعو
+Issue QR Pass,إصدار تصريح الدخول
+issued,صادر
+Issued At,صدر في
+Issued Tickets,التذاكر الصادرة
+Issuing Country,دولة الإصدار
+Item,بند
+item,بند
+Item Group,مجموعة البنود
+Item Price,سعر البند
+Items,البنود
+items,البنود
+Job Title,المسمى الوظيفي
+Journey,الرحلة
+journey,الرحلة
+keynote,كلمة افتتاحية
+KYC Approved,تم التحقق من الهوية
+KYC cannot be overridden (BR-002 / PDPL),لا يمكن تجاوز التحقق من الهوية (قاعدة العمل 002 / حماية البيانات)
+KYC Status,حالة التحقق من الهوية
+kyc_approved,تم التحقق من الهوية
+Label,التسمية
+label,التسمية
+landed,هبط
+Last Name,اسم العائلة
+latam,أمريكا اللاتينية
+Layout,التخطيط
+layout,التخطيط
+Leave blank to use the service name,اتركه فارغًا لاستخدام اسم الخدمة
+Level Fee,رسوم المستوى
+Liaison WhatsApp,واتساب المضيف
+Linked Guest,الضيف المرتبط
+Liveness Score,درجة التحقق الحي
+local,محلي
+Location,الموقع
+location,الموقع
+Lost,مفقود
+lost,مفقود
+Lost Item,غرض مفقود
+Low,منخفضة
+low,منخفضة
+Luggage Notes,ملاحظات الأمتعة
+maintenance,صيانة
+Male,ذكر
+male,ذكر
+manual,يدوي
+Map Link,رابط الخريطة
+Marketing communications consent,موافقة على الاتصالات التسويقية
+Max per Buyer,الحد الأقصى للمشتري
+meal,وجبة
+meal_request,طلب وجبة
+Media,إعلام
+media,إعلام
+Medical,طبي
+medical,طبي
+Medium,متوسطة
+medium,متوسطة
+Meet & Greet,استقبال وترحيب
+Meeting Point,نقطة الالتقاء
+meeting_room,غرفة اجتماعات
+Members,الأعضاء
+members,الأعضاء
+Message,الرسالة
+message,الرسالة
+Method,الطريقة
+method,الطريقة
+mixed,مختلط
+Mobile,الجوال
+mobile,الجوال
+Mobile Verified (OTP),الجوال موثّق (رمز لمرة واحدة)
+Mode of Payment,طريقة الدفع
+Moderator,ميسر
+moderator,ميسر
+morning,صباحي
+night,ليلي
+Name,الاسم
+name,الاسم
+Name (AR),الاسم (العربية)
+Nationality,الجنسية
+nationality,الجنسية
+Needed At,مطلوبة بتاريخ
+networking,تواصل شبكي
+New,جديد
+new,جديد
+nfc,اتصال قريب المدى
+NFC Enabled,الاتصال قريب المدى مفعّل
+NFC UID,معرّف الاتصال قريب المدى
+No agenda items yet — use Pull Event Sessions or add rows manually.,لا توجد بنود في الجدول بعد — اسحب جلسات الفعالية أو أضف صفوفًا يدويًا.
+No filter,بدون تصفية
+No guests with an email address.,لا يوجد ضيوف لديهم بريد إلكتروني.
+No overlaps found.,لا توجد تعارضات.
+No photo on the guest record — the badge will show initials.,لا توجد صورة في سجل الضيف — ستظهر الأحرف الأولى على بطاقة الدخول.
+no_show,لم يحضر
+none,لا شيء
+north_america,أمريكا الشمالية
+not_required,غير مطلوب
+not_started,لم يبدأ
+Notes,ملاحظات
+notes,ملاحظات
+Nothing new to generate.,لا يوجد جديد للإنشاء.
+Notification,إشعار
+notification,إشعار
+Notify whole team,إشعار الفريق بالكامل
+occupied,مشغول
+off_duty,خارج الخدمة
+On sale now,مطروحة للبيع
+on_trip,في الرحلة
+Only packages marked Invitation only are listed.,تُعرض فقط الباقات المحددة بالدعوة فقط.
+Open,مفتوح
+open,مفتوح
+Open Alerts,التنبيهات المفتوحة
+Open Invitation,فتح الدعوة
+Open Schedule,فتح الجدول
+Open Service Requests,طلبات الخدمة المفتوحة
+Open Tasks,المهام المفتوحة
+"Open the event once so the agenda engine loads, then resend.",افتح الفعالية مرة واحدة لتحميل محرك الجدول، ثم أعد الإرسال.
+opened,مفتوح
+Opened At,فُتح في
+Operations,العمليات
+operations,العمليات
+Operations & Tasks,العمليات والمهام
+"Optional: name of the section within the day (Morning, Gala, ...). Leave blank to auto-group by time.",اختياري: اسم القسم ضمن اليوم (صباح، حفل، ...). اتركه فارغًا للتجميع التلقائي حسب الوقت.
+Order,الطلب
+order,الطلب
+Order Type,نوع الطلب
+Organization,المنظمة
+organization,المنظمة
+organizer,منظم
+Other,أخرى
+other,أخرى
+OTP Code,رمز التحقق لمرة واحدة
+OTP Expires At,انتهاء رمز التحقق في
+Outbound Ticket,تذكرة الذهاب
+Overall Rating,التقييم الإجمالي
+override,تجاوز
+Override (audited),تجاوز (مُدقَّق)
+Override Stage,تجاوز المرحلة
+owner,المالك
+Owner Team,فريق المالك
+Package,باقة
+package,باقة
+Package Name,اسم الباقة
+Packages,الباقات
+packages,الباقات
+Packages & Registration,الباقات والتسجيل
+paid,مدفوع
+Paid At,وقت الدفع
+Paid Registrations,التسجيلات المدفوعة
+panel,حلقة نقاش
+Panelist,مشارك في الجلسة
+panelist,مشارك في الجلسة
+Parent,أصل
+parent,أصل
+Passengers,عدد الركاب
+passengers,عدد الركاب
+Passport,جواز السفر
+passport,جواز السفر
+Passport Copy,نسخة جواز السفر
+Passport Data (as read),بيانات جواز السفر (كما قُرئت)
+Passport Expiry,انتهاء جواز السفر
+Passport Image,صورة جواز السفر
+Passport Number,رقم جواز السفر
+Payment Entry,قيد دفع
+Payment Reference,مرجع العملية
+PDPL,نظام حماية البيانات الشخصية
+pdpl,نظام حماية البيانات الشخصية
+PDPL retention after event (days),مدة الاحتفاظ بعد الفعالية وفق حماية البيانات (أيام)
+pending,معلق
+Pending Tasks,المهام المعلقة
+pending_payment,بانتظار الدفع
+Persona,الشخصية
+persona,الشخصية
+Personal Agenda,الجدول الشخصي
+Phone,الهاتف
+phone,الهاتف
+Photo,صورة
+photo,صورة
+Picked Up,تم الاستلام
+picked_up,تم الاستلام
+Pickup Location,موقع الاستلام
+Placeholders,العناصر النائبة
+placeholders,العناصر النائبة
+planned,مخطط
+planner,مخطط
+Plate #,رقم اللوحة
+Player,لاعب
+player,لاعب
+Player Classification,تصنيف اللاعب
+Player Subscription,اشتراك اللاعب
+Players,اللاعبون
+players,اللاعبون
+plenary,جلسة عامة
+PNR,رمز الحجز
+pnr,رمز الحجز
+policy,سياسة
+Portal User,مستخدم البوابة
+Preferences & Needs,التفضيلات والاحتياجات
+Preferred Airport,المطار المفضل
+Preferred Language,اللغة المفضلة
+Preferred Travel Date,تاريخ السفر المفضل
+Preferred Travel Time,وقت السفر المفضل
+Premium Economy,سياحية مميزة
+RapidAPI Host,مضيف RapidAPI
+RapidAPI Key,مفتاح RapidAPI
+Enable AirLabs Lookup,تفعيل جلب الرحلات من AirLabs
+AirLabs (Flight Lookup),AirLabs (جلب الرحلات)
+AirLabs API Key,مفتاح AirLabs
+Event Plan (Days),خطة الفعالية (الأيام)
+Plan Days,أيام الخطة
+Session Tasks (Run of Show),مهام الجلسة (تشغيل)
+Programme Day #,رقم يوم البرنامج
+Preview Agenda Email,معاينة بريد جدول الفعالية
+Preview Badge,معاينة بطاقة الدخول
+Preview failed: {0},فشلت المعاينة: {0}
+Price,السعر
+price,السعر
+Print,طباعة
+print,طباعة
+Print Badge,طباعة بطاقة الدخول
+printed,مطبوع
+Printed At,طُبع في
+Printed By,طبع بواسطة
+Priority,الأولوية
+priority,الأولوية
+private,خاص
+Private schedule for this guest. Press Generate Tasks to notify the responsible people.,جدول خاص لهذا الضيف. اضغط إنشاء المهام لإشعار المسؤولين.
+Private transport (driver),نقل خاص بسائق
+Processed By,عالج بواسطة
+processing,قيد المعالجة
+Profile Completion %,نسبة اكتمال الملف
+Programme & Protocol,البرنامج والبروتوكول
+Programme Day,يوم البرنامج
+Programme Days,أيام البرنامج
+protocol,بروتوكول
+Protocol Notes,ملاحظات المراسم
+Pull Event Sessions,سحب جلسات الفعالية
+Purchased At,وقت الشراء
+Purpose,الغرض
+purpose,الغرض
+push,دفع
+QR,رمز الدخول
+qr,رمز الدخول
+QR Enabled,رمز الدخول مفعّل
+QR Image,صورة رمز الدخول
+QR Pass,تصريح الدخول
+QR Pass Validity (days),صلاحية تصريح الدخول (أيام)
+QR Token,رمز تصريح الدخول
+Qty,الكمية
+qty,الكمية
+qualified,مؤهل
+Quantity Released,الكمية المطروحة
+queued,في الطابور
+Rate,سعر الوحدة
+rate,سعر الوحدة
+ready,جاهز
+Reason,السبب
+reason,السبب
+Rebuild Programme Days,إعادة بناء أيام البرنامج
+received,مستلم
+Receiving Delegation,الوفد المستضيف
+Recipients,المستلمون
+recipients,المستلمون
+Recurring Level Fee,رسوم المستوى المتكررة
+Reference No,رقم المرجع
+Refresh,تحديث
+refresh,تحديث
+Refresh statuses,تحديث الحالات
+refunded,مسترد
+Regenerate the day rows from the start and end dates? Existing day titles are kept.,إعادة إنشاء صفوف الأيام من تاريخي البداية والنهاية؟ تُحتفظ بعناوين الأيام الحالية.
+Region,المنطقة
+region,المنطقة
+registered,مسجّل
+Registered On,تاريخ التسجيل
+registration,تسجيل
+Registration & Packages,التسجيل والباقات
+Registration & Tickets,التسجيل والتذاكر
+Registration open on website,التسجيل مفتوح على الموقع
+Registrations,التسجيلات
+registrations,التسجيلات
+rejected,مرفوض
+Rejection Reason,سبب الرفض
+Relationship,صلة القرابة
+relationship,صلة القرابة
+Remaining,المتبقي
+remaining,المتبقي
+Remarks,ملاحظات
+remarks,ملاحظات
+reminded,تم التذكير
+Rendering…,جاري العرض…
+Request Details,تفاصيل الطلب
+requested,مطلوب
+Requested By,مقدم الطلب
+Requesting Delegation,الوفد الطالب
+Require reason on stage override (BR-009),يتطلب سببًا عند تجاوز المرحلة (قاعدة العمل 009)
+Required,مطلوب
+required,مطلوب
+Requires session ticket,يتطلب تذكرة جلسة
+reserved,محجوز
+Resolution,الحل
+resolution,الحل
+resolved,محلول
+Resolved At,حُل في
+Resolved By,حل بواسطة
+Responsible,المسؤول
+responsible,المسؤول
+Responsible Team,الفريق المسؤول
+rest,راحة
+Return Date,تاريخ العودة
+Return Departure,مغادرة العودة
+Return Flight,رحلة العودة
+Return Ticket,تذكرة العودة
+Return Ticket PDF,مستند تذكرة العودة
+Review,مراجعة
+review,مراجعة
+Reviewed At,روجع في
+Reviewed By,راجع بواسطة
+Revoked,مُلغاة
+revoked,ملغى الصلاحية
+Revoked At,أُلغي في
+Role,الدور
+role,الدور
+rollback,تراجع
+Room #,رقم الغرفة
+Room Inventory,مخزون الغرف
+room_change,تغيير غرفة
+Rooms,الغرف
+rooms,الغرف
+Route,المسار
+route,المسار
+routed,موجَّه
+Routed To,الجهة المختصة
+Rule Ref (BR-xxx),مرجع القاعدة (قاعدة العمل)
+Run of Show,تسلسل العرض
+Sale,الطرح للبيع
+sale,الطرح للبيع
+Sale End,نهاية البيع
+Sale Start,بداية البيع
+Sales Invoice,فاتورة مبيعات
+Scan Method,طريقة المسح
+Scanned / Confirmed At,وقت المسح / التأكيد
+Schedule,الجدول
+schedule,الجدول
+scheduled,مجدول
+Scheduled At,مجدول في
+Scheduled Sessions,الجلسات المجدولة
+Scheduling conflicts,تعارضات الجدولة
+Section Title,عنوان القسم
+Section Title (AR),عنوان القسم (العربية)
+Secure Link,رابط آمن
+Security,الأمن
+security,الأمن
+Security Vetting,الفحص الأمني
+self_funded,ذاتي التمويل
+Send Agenda PDF to All,إرسال مستند جدول الفعالية للجميع
+Send Agenda to All Registered,إرسال جدول الفعالية لجميع المسجلين
+Send Channel,قناة الإرسال
+Send feedback survey on completion,إرسال استبيان التقييم عند الاكتمال
+Send Now (email),أرسل الآن (بريد)
+Send the agenda email to every registered guest of this event?,إرسال بريد جدول الفعالية لكل ضيف مسجل في هذه الفعالية؟
+sending,جارٍ الإرسال
+sent,مُرسل
+Sent At,أُرسل في
+Sent: {0} · Failed: {1},أُرسل: {0} · فشل: {1}
+separate,منفصل
+Serial,الرقم التسلسلي
+serial,الرقم التسلسلي
+Series,التسلسل
+series,التسلسل
+Service,خدمة
+service,خدمة
+Service Name,اسم الخدمة
+Service Requests,طلبات الخدمة
+Service Type,نوع الخدمة
+service_request,طلب خدمة
+services,خدمات
+Session,جلسة
+session,جلسة
+Sessions,الجلسات
+sessions,جلسات
+Set the Due Date before entering times,حدد تاريخ الاستحقاق قبل إدخال الأوقات
+share_erc,مشاركة الاعتماد المشترك
+"Short code used in naming, e.g. GIF26",رمز قصير يُستخدم في التسمية
+Show agenda,إظهار جدول الفعالية
+Show hall & navigation,إظهار القاعة والتنقل
+Show speakers,إظهار المتحدثين
+Show track,إظهار المسار
+Showing all data,عرض كل البيانات
+side_event,فعالية جانبية
+Single,مفردة
+single,مفردة
+single_day,يوم واحد
+single_session,جلسة واحدة
+single_table,جدول واحد
+site_visit,زيارة موقع
+skipped,متخطى
+sms,رسائل نصية
+SMS Gateway (Frappe SMS Settings used),بوابة الرسائل النصية (إعدادات النظام)
+SMS Settings,إعدادات الرسائل النصية
+Sold,مباع
+sold,مباع
+Source,المصدر
+source,المصدر
+Source DocType,نوع المستند المصدر
+Source Type,مصدر المهمة
+Speaker,متحدث
+speaker,متحدث
+Speakers,المتحدثون
+speakers,المتحدثون
+Special Needs,احتياجات خاصة
+Special Needs / Accessibility,احتياجات خاصة / إمكانية الوصول
+Sponsor,راعٍ
+sponsor,راعٍ
+sponsored,مدعوم
+Sport Activity,نشاط رياضي
+Sport Event,فعالية رياضية
+Sport Facility,منشأة رياضية
+Spouse,زوج/زوجة
+spouse,زوج/زوجة
+Staff,طاقم
+staff,طاقم
+Stage,المرحلة
+stage,المرحلة
+Stage → {0},المرحلة ← {0}
+Standard,قياسي
+standard,قياسي
+Start,البداية
+start,البداية
+Start Date,تاريخ البداية
+Started,بدأ
+started,بدأ
+startups,شركات ناشئة
+State,الحالة
+state,الحالة
+Status,الحالة
+status,الحالة
+Subject,الموضوع
+subject,الموضوع
+Subject (AR),الموضوع (العربية)
+Subject (EN),الموضوع (الإنجليزية)
+Subject (FR),الموضوع (الفرنسية)
+submitted,مقدَّم
+Submitted At,قُدّم في
+Subscription,اشتراك
+subscription,اشتراك
+Suite,جناح
+suite,جناح
+supplier,مورّد
+Support Tickets,تذاكر الدعم
+Survey Link,رابط الاستبيان
+System Manager,مدير النظام
+System Tools,أدوات النظام
+Target stage,المرحلة المستهدفة
+Task,مهمة
+task,مهمة
+Task (AR),المهمة (العربية)
+Task Priority,أولوية المهمة
+Task spans the whole day — uncheck to set a start and end time.,المهمة تستغرق اليوم كاملًا — ألغِ التحديد لتعيين وقت بداية ونهاية.
+Task Subject Template,قالب موضوع المهمة
+Tasks,المهام
+tasks,المهام
+Tasks Generated,تم توليد المهام
+Team,الفريق
+team,الفريق
+Team notified,تم إشعار الفريق
+technology,تقنية
+Template,قالب
+template,قالب
+Template Name,اسم القالب
+Terminal,صالة
+terminal,صالة
+Terms,الشروط
+terms,الشروط
+Theatre,مسرح
+theatre,مسرح
+This event has no sessions yet.,هذه الفعالية لا تحتوي على جلسات بعد.
+This registration has no event.,هذا التسجيل غير مرتبط بفعالية.
+Ticket,تذكرة
+ticket,تذكرة
+Ticket Name,اسم التذكرة
+Ticket PDF,مستند التذكرة
+Ticket Types,أنواع التذاكر
+ticket_issued,صدرت التذكرة
+Tickets Issued,التذاكر الصادرة
+Tickets Sold,التذاكر المباعة
+Tickets Used,التذاكر المستخدمة
+Tier,مستوى
+tier,مستوى
+Time,الوقت
+time,الوقت
+Timeline,الجدول الزمني
+timeline,الجدول الزمني
+Timezone,المنطقة الزمنية
+timezone,المنطقة الزمنية
+Title,العنوان
+title,العنوان
+Title (AR),العنوان (العربية)
+Title (FR),العنوان (الفرنسية)
+Title / Position,المسمى / المنصب
+To,إلى
+to,إلى
+To must be after From,يجب أن يكون «إلى» بعد «من»
+Token,الرمز
+token,الرمز
+Total,الإجمالي
+total,الإجمالي
+Total Capacity,السعة الإجمالية
+Total Revenue,إجمالي الإيرادات
+Tourist,سائح
+tourist,سائح
+Tourist Visa,تأشيرة سياحية
+Tournament,بطولة
+tournament,بطولة
+Track,المسار
+track,المسار
+Transit,ترانزيت
+transit,ترانزيت
+Transport,النقل
+transport,نقل
+Transport State,حالة النقل
+Travel & Logistics,السفر واللوجستيات
+Travel Mode,وسيلة السفر
+travel_team,فريق السفر
+traveling,مسافر
+Trip Type,نوع الرحلة
+Twin,مزدوجة
+twin,مزدوجة
+Type,النوع
+type,النوع
+U-Shape,ترتيب مفتوح من جهة
+unassigned,غير مُسند
+"Uncheck to hide the agenda from the guest portal, the public event page and the agenda emails.",ألغِ التحديد لإخفاء الجدول عن بوابة الضيف وصفحة الفعالية العامة ورسائل الجدول.
+under_review,قيد المراجعة
+Unscheduled,غير مجدول
+unscheduled,غير مجدول
+Urgent,عاجل
+urgent,عاجل
+used,مستخدم
+Used At,وقت الاستخدام
+Used when no individual is set,يُستخدم عند عدم تعيين فرد
+User,المستخدم
+user,المستخدم
+usher,مرشد
+Vehicle,مركبة
+vehicle,مركبة
+Venue,مكان الفعالية
+venue,مكان
+Venue Address,عنوان المكان
+Venue Name,اسم المكان
+Venue Name (AR),اسم المكان (العربية)
+Venue → Hotel,مكان الفعالية ← الفندق
+verified,موثَّق
+Vetting Status,حالة الفحص
+VIP,شخصية مهمة
+vip,شخصية مهمة
+VIP Agenda,جدول الشخصيات المهمة
+VIP only,للشخصيات المهمة فقط
+VIP Suite,جناح الشخصيات المهمة
+vip_protocol,بروتوكول الشخصيات المهمة
+Visa,تأشيرة
+visa,تأشيرة
+Visa & Travel,التأشيرة والسفر
+Visa Expiry,انتهاء التأشيرة
+Visa Pipeline,مسار التأشيرات
+Visa Status,حالة التأشيرة
+Visa Type,نوع التأشيرة
+visa_approved,اعتُمدت التأشيرة
+visa_processing,معالجة التأشيرة
+visa_support,دعم التأشيرة
+visa_team,فريق التأشيرات
+Visas Issued,التأشيرات الصادرة
+Visible to public buyers,ظاهرة للجمهور
+Visitor,زائر
+visitor,زائر
+waiting_guest,بانتظار الضيف
+Web Form,نموذج ويب
+Web Page,صفحة ويب
+Website Settings,إعدادات الموقع
+whatsapp,واتساب
+WhatsApp Number,رقم الواتساب
+with_invitation,مع دعوة
+Withdrawn,مسحوب
+withdrawn,مسحوب
+Withdrawn At,سُحب في
+workshop,ورشة عمل
+Youth Host / Liaison,مضيف الوفد
+أُسند السائق لـ {0} — إشعار للضيف,أُسند السائق لـ {0} — إشعار للضيف
+إرسال رمز التحقق,إرسال رمز التحقق لمرة واحدة
+إصدار التذكرة: رقم الرحلة ومستند التذكرة مطلوبان.,إصدار التذكرة: رقم الرحلة ومستند التذكرة مطلوبان.
+إصدار تصريح الدخول,إصدار رمز الدخول
+اعتماد KYC,اعتماد التحقق من الهوية
+اكتمال الملف,اكتمال الملف
+اكتمل تسجيل دخول {0},اكتمل تسجيل دخول {0}
+اكتملت مهمة نقل {0},اكتملت مهمة نقل {0}
+الإعدادات الأساسية / Basic Setup,الإعدادات الأساسية
+التحقق من البريد الإلكتروني والجوال,التحقق من البريد الإلكتروني والجوال
+التحقق من الهوية,التحقق من الهوية
+التحقق-من-الهوية,التحقق-من-الهوية
+التشغيل الميداني,التشغيل الميداني
+التمويل,التمويل
+التنقل داخل الموقع,التنقل داخل الموقع
+الحي,الحي
+الرسوم والأسعار / Fees & Pricing,الرسوم والأسعار
+العمليات / Operations,العمليات
+العنوان التفصيلي,العنوان التفصيلي
+الفئة,الفئة
+الفروع والمنشآت / Branches & Facilities,الفروع والمنشآت
+اللاعبون / Players,اللاعبون
+المالية / Finance & Accounting,المالية والمحاسبة
+المرافقون,المرافقون
+المرحلة تُدار عبر محرك الرحلة فقط (تقديم / تجاوز).,المرحلة تُدار عبر محرك الرحلة فقط (تقديم / تجاوز).
+الموافقة على الأغراض المطلوبة ضرورية للمتابعة (حماية البيانات الشخصية),الموافقة على الأغراض المطلوبة ضرورية للمتابعة (حماية البيانات الشخصية)
+الموقع على الخريطة,الموقع على الخريطة
+الوفد,الوفد
+بادجات جاهزة,بطاقات الدخول جاهزة
+بدون تصفية,بدون تصفية
+تذكرة دعم,تذكرة دعم
+تذكرة-دعم,تذكرة-دعم
+تصفية حسب الفعالية,تصفية حسب الفعالية
+تظهر بطاقات الدخول بعد تسجيل دخول الضيوف للفندق (قاعدة العمل 007).,تظهر بطاقات الدخول بعد تسجيل دخول الضيوف للفندق (قاعدة العمل 007).
+تقييم التجربة,تقييم التجربة
+تقييم-التجربة,تقييم-التجربة
+تم تأكيد وصول {0},تم تأكيد وصول {0}
+جدول الفعالية,جدول الفعالية
+حالة KYC,حالة التحقق من الهوية
+خيار الاعتماد المشترك معتمد (يظهر للمندوب),خيار الاعتماد المشترك معتمد (يظهر للمندوب)
+خيار فندق الاعتماد المشترك,خيار فندق الاعتماد المشترك
+رئيس الوفد,رئيس الوفد
+سبب التجاوز (إلزامي للتدقيق · قاعدة العمل 009),سبب التجاوز (إلزامي للتدقيق · قاعدة العمل 009)
+سحب الموافقة (حماية البيانات الشخصية),سحب الموافقة (حماية البيانات الشخصية)
+سياق الفعالية,سياق الفعالية
+صورة الوجه,صورة الوجه
+طلب طيران,طلب طيران
+طلب عرض توضيحي,طلب عرض توضيحي
+طلب-طيران,طلب-طيران
+طلب-عرض-توضيحي,طلب-عرض-توضيحي
+عرض كل البيانات,عرض كل البيانات
+قبل اعتماد KYC,قبل اعتماد التحقق من الهوية
+كل الفعاليات,كل الفعاليات
+لا توجد تصاريح دخول صادرة بعد,لا توجد تصاريح دخول صادرة بعد
+مسح التصفية,مسح التصفية
+مضيف الوفد / الارتباط,مضيف الوفد / الارتباط
+موافقات حماية البيانات الشخصية,موافقات حماية البيانات الشخصية
+موافقات حماية البيانات الشخصية حسب الغرض,موافقات حماية البيانات الشخصية حسب الغرض
+وجّه الكاميرا نحو رمز الدخول في تطبيق الضيف,وجّه الكاميرا نحو رمز الدخول في تطبيق الضيف

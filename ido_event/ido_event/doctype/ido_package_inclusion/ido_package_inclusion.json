@@ -1,0 +1,92 @@
+{
+ "actions": [],
+ "allow_bulk_edit": 1,
+ "allow_rename": 1,
+ "creation": "2026-09-10 01:52:05.795243",
+ "custom": 0,
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "service",
+  "service_name_ar",
+  "team",
+  "qty",
+  "priority",
+  "notes"
+ ],
+ "fields": [
+  {
+   "columns": 3,
+   "fieldname": "service",
+   "fieldtype": "Link",
+   "idx": 1,
+   "in_list_view": 1,
+   "label": "Service",
+   "options": "IDO Package Service",
+   "reqd": 1
+  },
+  {
+   "columns": 2,
+   "fetch_from": "service.service_name_ar",
+   "fieldname": "service_name_ar",
+   "fieldtype": "Data",
+   "idx": 2,
+   "in_list_view": 1,
+   "label": "\u0628\u0627\u0644\u0639\u0631\u0628\u064a\u0629",
+   "read_only": 1
+  },
+  {
+   "columns": 2,
+   "fetch_from": "service.team",
+   "fieldname": "team",
+   "fieldtype": "Data",
+   "idx": 3,
+   "in_list_view": 1,
+   "label": "Team",
+   "read_only": 1
+  },
+  {
+   "columns": 1,
+   "default": "1",
+   "fieldname": "qty",
+   "fieldtype": "Int",
+   "idx": 4,
+   "in_list_view": 1,
+   "label": "Qty"
+  },
+  {
+   "columns": 1,
+   "description": "Blank = use the service default",
+   "fieldname": "priority",
+   "fieldtype": "Select",
+   "idx": 5,
+   "in_list_view": 1,
+   "label": "Priority",
+   "options": "\nLow\nMedium\nHigh\nUrgent"
+  },
+  {
+   "columns": 2,
+   "fieldname": "notes",
+   "fieldtype": "Data",
+   "idx": 6,
+   "in_list_view": 1,
+   "label": "Notes"
+  }
+ ],
+ "grid_page_length": 50,
+ "index_web_pages_for_search": 1,
+ "istable": 1,
+ "links": [],
+ "modified": "2026-09-10 01:52:05.795243",
+ "modified_by": "Administrator",
+ "module": "IDO Event",
+ "name": "IDO Package Inclusion",
+ "owner": "Administrator",
+ "permissions": [],
+ "row_format": "Dynamic",
+ "rows_threshold_for_grid_search": 20,
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

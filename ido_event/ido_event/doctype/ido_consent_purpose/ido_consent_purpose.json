@@ -1,0 +1,88 @@
+{
+ "actions": [],
+ "allow_bulk_edit": 1,
+ "allow_rename": 1,
+ "creation": "2026-09-08 03:18:42.390591",
+ "custom": 0,
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "purpose",
+  "purpose_label",
+  "required",
+  "granted",
+  "granted_at",
+  "withdrawn",
+  "withdrawn_at"
+ ],
+ "fields": [
+  {
+   "fieldname": "purpose",
+   "fieldtype": "Select",
+   "idx": 1,
+   "in_list_view": 1,
+   "label": "Purpose",
+   "options": "core\nshare_erc\ncomms",
+   "reqd": 1
+  },
+  {
+   "fieldname": "purpose_label",
+   "fieldtype": "Data",
+   "idx": 2,
+   "in_list_view": 1,
+   "label": "Description"
+  },
+  {
+   "default": "0",
+   "fieldname": "required",
+   "fieldtype": "Check",
+   "idx": 3,
+   "in_list_view": 1,
+   "label": "Required"
+  },
+  {
+   "default": "0",
+   "fieldname": "granted",
+   "fieldtype": "Check",
+   "idx": 4,
+   "in_list_view": 1,
+   "label": "Granted"
+  },
+  {
+   "fieldname": "granted_at",
+   "fieldtype": "Datetime",
+   "idx": 5,
+   "label": "Granted At"
+  },
+  {
+   "default": "0",
+   "fieldname": "withdrawn",
+   "fieldtype": "Check",
+   "idx": 6,
+   "in_list_view": 1,
+   "label": "Withdrawn"
+  },
+  {
+   "fieldname": "withdrawn_at",
+   "fieldtype": "Datetime",
+   "idx": 7,
+   "label": "Withdrawn At"
+  }
+ ],
+ "grid_page_length": 50,
+ "index_web_pages_for_search": 1,
+ "istable": 1,
+ "links": [],
+ "modified": "2026-09-08 03:18:42.390591",
+ "modified_by": "Administrator",
+ "module": "IDO Event",
+ "name": "IDO Consent Purpose",
+ "owner": "Administrator",
+ "permissions": [],
+ "row_format": "Dynamic",
+ "rows_threshold_for_grid_search": 20,
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

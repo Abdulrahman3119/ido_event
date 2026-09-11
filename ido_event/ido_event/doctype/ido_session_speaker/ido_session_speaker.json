@@ -1,0 +1,59 @@
+{
+ "actions": [],
+ "allow_bulk_edit": 1,
+ "allow_rename": 1,
+ "creation": "2026-09-06 11:57:23.542596",
+ "custom": 0,
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "speaker",
+  "speaker_name",
+  "role"
+ ],
+ "fields": [
+  {
+   "fieldname": "speaker",
+   "fieldtype": "Link",
+   "idx": 1,
+   "in_list_view": 1,
+   "label": "Speaker",
+   "options": "IDO Speaker",
+   "reqd": 1
+  },
+  {
+   "fetch_from": "speaker.speaker_name",
+   "fieldname": "speaker_name",
+   "fieldtype": "Data",
+   "idx": 2,
+   "in_list_view": 1,
+   "label": "Name",
+   "read_only": 1
+  },
+  {
+   "default": "Speaker",
+   "fieldname": "role",
+   "fieldtype": "Select",
+   "idx": 3,
+   "in_list_view": 1,
+   "label": "Role",
+   "options": "Speaker\nModerator\nPanelist\nHost"
+  }
+ ],
+ "grid_page_length": 50,
+ "index_web_pages_for_search": 1,
+ "istable": 1,
+ "links": [],
+ "modified": "2026-09-06 11:57:48.232350",
+ "modified_by": "Administrator",
+ "module": "IDO Event",
+ "name": "IDO Session Speaker",
+ "owner": "Administrator",
+ "permissions": [],
+ "row_format": "Dynamic",
+ "rows_threshold_for_grid_search": 20,
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

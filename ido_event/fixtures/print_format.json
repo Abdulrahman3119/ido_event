@@ -1,0 +1,31 @@
+[
+ {
+  "absolute_value": 0,
+  "align_labels_right": 0,
+  "css": "@page { size: 90mm 130mm; margin: 0; }\nbody { margin: 0; }\n.ido-badge { width: 90mm; height: 130mm; position: relative; box-sizing: border-box;\n  font-family: \"Tahoma\", \"Arial\", sans-serif; text-align: center; overflow: hidden;\n  background: #fff; -webkit-print-color-adjust: exact; print-color-adjust: exact; }\n.ido-badge .bg-top { position: absolute; top: 0; left: 0; right: 0; height: 34mm;\n  background: linear-gradient(140deg, #25255a, #5c2d91 55%, #7f529e);\n  border-radius: 0 0 42% 42% / 0 0 18% 18%; }\n.ido-badge .head { position: relative; padding-top: 7mm; color: #fff; }\n.ido-badge .brand { font-size: 15pt; font-weight: 800; letter-spacing: -.4pt; }\n.ido-badge .brand span { display: block; font-size: 6pt; font-weight: 500; letter-spacing: 2.4pt; opacity: .85; }\n.ido-badge .ev { font-size: 7pt; opacity: .9; margin-top: 1.5mm; }\n.ido-badge .photo { position: relative; width: 30mm; height: 30mm; margin: 4mm auto 0;\n  border-radius: 50%; overflow: hidden; border: 1.2mm solid #fff; background: #efe8f8;\n  box-shadow: 0 2mm 5mm rgba(55,27,87,.25); }\n.ido-badge .photo img { width: 100%; height: 100%; object-fit: cover; display: block; }\n.ido-badge .photo .ph { line-height: 27mm; font-size: 26pt; font-weight: 800; color: #7f529e; }\n.ido-badge .name { margin-top: 4mm; font-size: 14pt; font-weight: 800; color: #231f20; padding: 0 5mm; line-height: 1.25; }\n.ido-badge .role { font-size: 8.5pt; color: #5c2d91; margin-top: 1mm; padding: 0 6mm; }\n.ido-badge .org { font-size: 8pt; color: #666; margin-top: .8mm; padding: 0 6mm; }\n.ido-badge .type { display: inline-block; margin-top: 3mm; padding: 1.4mm 6mm; border-radius: 9mm;\n  font-size: 8pt; font-weight: 800; letter-spacing: .6pt; background: #efe8f8; color: #45226d; }\n.ido-badge .type-vip { background: #fbf0da; color: #8a5a00; }\n.ido-badge .type-speaker { background: #e3f5ec; color: #1f6b45; }\n.ido-badge .type-media { background: #e6eefb; color: #1f4d8a; }\n.ido-badge .type-sponsor { background: #fbe3e3; color: #8a2b2b; }\n.ido-badge .qr { position: absolute; bottom: 11mm; left: 0; right: 0; }\n.ido-badge .qr img { width: 24mm; height: 24mm; }\n.ido-badge .serial { font-size: 7pt; color: #888; margin-top: 1mm; letter-spacing: .6pt; }\n.ido-badge .serial.noqr { margin-top: 12mm; font-size: 8pt; }\n.ido-badge .foot { position: absolute; bottom: 4mm; left: 0; right: 0; font-size: 6.5pt; color: #aaa; }",
+  "custom_format": 1,
+  "disabled": 0,
+  "doc_type": "IDO Badge",
+  "docstatus": 0,
+  "doctype": "Print Format",
+  "font_size": 9,
+  "html": "<div class=\"ido-badge\">\n  <div class=\"bg-top\"><>\n  <div class=\"head\">\n    <div class=\"brand\">i-do<span>EVENTS<><>\n    <div class=\"ev\">{{ doc.event or \"\" }}<>\n  <>\n  <div class=\"photo\">\n    {% if doc.photo %}<img src=\"{{ doc.photo }}\">{% else %}<div class=\"ph\">{{ (doc.guest_name or \"?\")[0] }}<>{% endif %}\n  <>\n  <div class=\"name\">{{ doc.guest_name or \"\" }}<>\n  {% if doc.job_title %}<div class=\"role\">{{ doc.job_title }}<>{% endif %}\n  {% if doc.organization %}<div class=\"org\">{{ doc.organization }}<>{% endif %}\n  <div class=\"type type-{{ (doc.badge_type or 'Delegate')|lower }}\">{{ doc.badge_type or \"Delegate\" }}<>\n  <div class=\"qr\">\n    {% set qp = frappe.db.get_value(\"IDO QR Pass\", {\"guest\": doc.guest, \"revoked\": 0}, [\"token\",\"checksum\"]) %}\n    {% if doc.qr_enabled and qp %}\n      <img src=\"https:/.qrserver.com?size=150x150&data=IDO:{{ qp[0] }}:{{ qp[1] }}\">\n      <div class=\"serial\">{{ doc.name }}<>\n    {% else %}\n      <div class=\"serial noqr\">{{ doc.name }}<>\n    {% endif %}\n  <>\n  <div class=\"foot\">{{ doc.emergency_contact or \"\" }}<>\n<>",
+  "idx": 0,
+  "line_breaks": 0,
+  "margin_bottom": 0.0,
+  "margin_left": 0.0,
+  "margin_right": 0.0,
+  "margin_top": 0.0,
+  "module": "IDO Event",
+  "name": "IDO Badge Card",
+  "page_number": "Hide",
+  "pdf_generator": "wkhtmltopdf",
+  "print_format_builder": 0,
+  "print_format_builder_beta": 0,
+  "print_format_for": "DocType",
+  "print_format_type": "Jinja",
+  "raw_printing": 0,
+  "show_section_headings": 0,
+  "standard": "Yes"
+ }
+]

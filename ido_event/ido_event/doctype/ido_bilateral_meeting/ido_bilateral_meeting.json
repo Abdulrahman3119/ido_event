@@ -1,0 +1,207 @@
+{
+ "actions": [],
+ "allow_bulk_edit": 1,
+ "allow_rename": 1,
+ "autoname": "naming_series:",
+ "creation": "2026-09-08 03:18:18.383357",
+ "custom": 0,
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "naming_series",
+  "event",
+  "requesting_delegation",
+  "receiving_delegation",
+  "requested_by",
+  "column_break_1",
+  "status",
+  "preferred_window",
+  "scheduled_at",
+  "duration_mins",
+  "room",
+  "sb_agenda",
+  "agenda",
+  "decline_reason"
+ ],
+ "fields": [
+  {
+   "default": "BIL-.####",
+   "fieldname": "naming_series",
+   "fieldtype": "Select",
+   "hidden": 1,
+   "idx": 1,
+   "options": "BIL-.####"
+  },
+  {
+   "fieldname": "event",
+   "fieldtype": "Link",
+   "idx": 2,
+   "in_standard_filter": 1,
+   "label": "Event",
+   "options": "IDO Event",
+   "reqd": 1
+  },
+  {
+   "fieldname": "requesting_delegation",
+   "fieldtype": "Link",
+   "idx": 3,
+   "in_list_view": 1,
+   "label": "\u0627\u0644\u0648\u0641\u062f \u0627\u0644\u0637\u0627\u0644\u0628",
+   "options": "IDO Delegation",
+   "reqd": 1
+  },
+  {
+   "fieldname": "receiving_delegation",
+   "fieldtype": "Link",
+   "idx": 4,
+   "in_list_view": 1,
+   "label": "\u0627\u0644\u0648\u0641\u062f \u0627\u0644\u0645\u0633\u062a\u0642\u0628\u0650\u0644",
+   "options": "IDO Delegation",
+   "reqd": 1
+  },
+  {
+   "fieldname": "requested_by",
+   "fieldtype": "Link",
+   "idx": 5,
+   "label": "\u0645\u0642\u062f\u0651\u0645 \u0627\u0644\u0637\u0644\u0628",
+   "options": "IDO Guest"
+  },
+  {
+   "fieldname": "column_break_1",
+   "fieldtype": "Column Break",
+   "idx": 6
+  },
+  {
+   "default": "requested",
+   "fieldname": "status",
+   "fieldtype": "Select",
+   "idx": 7,
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Status",
+   "options": "requested\navailability_checked\nconfirmed\nreminded\nchecked_in\ndeclined\ncancelled"
+  },
+  {
+   "fieldname": "preferred_window",
+   "fieldtype": "Data",
+   "idx": 8,
+   "label": "\u0627\u0644\u0646\u0627\u0641\u0630\u0629 \u0627\u0644\u0632\u0645\u0646\u064a\u0629 \u0627\u0644\u0645\u0641\u0636\u0651\u0644\u0629"
+  },
+  {
+   "fieldname": "scheduled_at",
+   "fieldtype": "Datetime",
+   "idx": 9,
+   "in_list_view": 1,
+   "label": "\u0627\u0644\u0645\u0648\u0639\u062f \u0627\u0644\u0645\u0624\u0643\u0651\u062f"
+  },
+  {
+   "default": "30",
+   "fieldname": "duration_mins",
+   "fieldtype": "Int",
+   "idx": 10,
+   "label": "\u0627\u0644\u0645\u062f\u0629 (\u062f\u0642\u0627\u0626\u0642)"
+  },
+  {
+   "fieldname": "room",
+   "fieldtype": "Data",
+   "idx": 11,
+   "label": "\u0627\u0644\u0642\u0627\u0639\u0629"
+  },
+  {
+   "fieldname": "sb_agenda",
+   "fieldtype": "Section Break",
+   "idx": 12,
+   "label": "Agenda"
+  },
+  {
+   "fieldname": "agenda",
+   "fieldtype": "Text",
+   "idx": 13,
+   "label": "\u062c\u062f\u0648\u0644 \u0627\u0644\u0623\u0639\u0645\u0627\u0644"
+  },
+  {
+   "fieldname": "decline_reason",
+   "fieldtype": "Small Text",
+   "idx": 14,
+   "label": "\u0633\u0628\u0628 \u0627\u0644\u0631\u0641\u0636"
+  }
+ ],
+ "grid_page_length": 50,
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2026-09-08 03:18:18.383357",
+ "modified_by": "Administrator",
+ "module": "IDO Event",
+ "name": "IDO Bilateral Meeting",
+ "naming_rule": "By \"Naming Series\" field",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "IDO Owner",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "IDO Event Manager",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "IDO Organizer",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "IDO Guest",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "row_format": "Dynamic",
+ "rows_threshold_for_grid_search": 20,
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "track_changes": 1
+}
