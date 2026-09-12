@@ -7,6 +7,8 @@ frappe.provide("ido_event.workspace");
 (function () {
 	const STORAGE_KEY = "ido_selected_event";
 	const WORKSPACES = new Set(["IDO Events", "IDO Play", "الفعاليات"]);
+	const BAR_ID = "ido-workspace-event-bar";
+	const MAX_INJECT_ATTEMPTS = 25;
 
 	const ICONS = {
 		calendar: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18"/><path d="M8 3v4"/><path d="M16 3v4"/></svg>`,
@@ -20,26 +22,68 @@ frappe.provide("ido_event.workspace");
 		events: [],
 		_patched: false,
 		_menu_bound: false,
+		_inject_timer: null,
+		_inject_attempts: 0,
+		_observer: null,
 	};
 
-	function get_workspace_name() {
+	function route_workspace_name() {
 		const route = frappe.get_route();
 		if (!route || !route.length) return null;
 		if (route[0] === "Workspaces" || route[0] === "workspace") {
+			// ["Workspaces", "IDO Events"] or ["Workspaces", "private", "My Page"]
+			if (route[1] === "private") return route[2] || null;
 			return route[1] || null;
 		}
 		return null;
 	}
 
-	function is_ido_workspace() {
-		const name = get_workspace_name();
+	function looks_like_ido_name(name) {
 		if (!name) return false;
 		if (WORKSPACES.has(name)) return true;
+		const n = String(name);
+		const lower = n.toLowerCase().replace(/_/g, " ").replace(/-/g, " ");
 		return (
-			name.indexOf("IDO") === 0 ||
-			name.indexOf("فعالية") >= 0 ||
-			name.indexOf("Event") >= 0
+			n.indexOf("IDO") === 0 ||
+			lower.indexOf("ido event") >= 0 ||
+			lower === "ido events" ||
+			lower === "ido play" ||
+			n.indexOf("فعالية") >= 0 ||
+			n.indexOf("الفعاليات") >= 0
 		);
+	}
+
+	function sidebar_title() {
+		try {
+			const from_attr = ($(".body-sidebar").attr("data-title") || "").trim();
+			if (from_attr) return from_attr;
+			return (frappe.app && frappe.app.sidebar && frappe.app.sidebar.sidebar_title) || "";
+		} catch (e) {
+			return "";
+		}
+	}
+
+	function is_ido_doctype_route() {
+		const route = frappe.get_route() || [];
+		if (!route.length) return false;
+		if (route[0] === "List" || route[0] === "Form" || route[0] === "Tree") {
+			return String(route[1] || "").indexOf("IDO ") === 0;
+		}
+		if (route[0] === "dashboard-view" || route[0] === "Dashboard") {
+			return String(route[1] || "").indexOf("IDO ") === 0;
+		}
+		return false;
+	}
+
+	function is_ido_workspace() {
+		const name = route_workspace_name();
+		if (looks_like_ido_name(name)) return true;
+		if (looks_like_ido_name(sidebar_title())) return true;
+		return false;
+	}
+
+	function should_show_picker() {
+		return is_ido_workspace() || is_ido_doctype_route();
 	}
 
 	function status_class(status) {
@@ -201,60 +245,80 @@ frappe.provide("ido_event.workspace");
 		});
 	};
 
-	ido_event.workspace.inject_picker = async function () {
-		if (!is_ido_workspace()) {
-			$("#ido-workspace-event-bar").remove();
-			return;
+	function find_inject_host() {
+		const $editor = $("#editorjs, .codex-editor").first();
+		if ($editor.length) {
+			return { $el: $editor, mode: "before" };
 		}
 
-		let $host = $(".codex-editor, .workspace-body, .layout-main-section").first();
-		if (!$host.length) {
-			$host = $(
-				".workspace-header, .page-head .page-head-content, .layout-main"
-			).first();
+		const $container = $(".editor-js-container").first();
+		if ($container.length) {
+			return { $el: $container, mode: "prepend" };
 		}
-		if (!$host.length) return;
 
-		if (!$("#ido-workspace-event-bar").length) {
-			const bar = $(`
-				<div id="ido-workspace-event-bar" class="ido-event-bar" role="region" aria-label="${__(
-					"تصفية حسب الفعالية"
-				)}">
-					<div class="ido-event-bar__icon">${ICONS.calendar}</div>
-					<div class="ido-event-bar__meta">
-						<div class="ido-event-bar__eyebrow">${__("سياق الفعالية")}</div>
-						<div id="ido-workspace-event-hint" class="ido-event-bar__hint">${__(
-							"عرض كل البيانات"
-						)}</div>
-					</div>
-					<div class="ido-event-bar__controls">
-						<div class="ido-event-picker" id="ido-workspace-event-picker">
-							<button type="button" class="ido-event-picker__btn" id="ido-workspace-event-btn" aria-haspopup="listbox" aria-expanded="false">
-								<span id="ido-workspace-event-dot" class="ido-event-picker__dot"></span>
-								<span id="ido-workspace-event-label" class="ido-event-picker__label">${__(
-									"كل الفعاليات"
-								)}</span>
-								<span class="ido-event-picker__chevron">${ICONS.chevron}</span>
-							</button>
-							<div class="ido-event-picker__menu" id="ido-workspace-event-menu" role="listbox"></div>
-						</div>
-						<button type="button" class="ido-event-bar__clear" id="ido-workspace-event-clear" title="${__(
-							"مسح التصفية"
-						)}" aria-label="${__("مسح التصفية")}" disabled>
-							${ICONS.close}
-						</button>
-					</div>
+		const $ws = $(".workspace-body, .desk-page.page-main-content").first();
+		if ($ws.length) {
+			return { $el: $ws, mode: "prepend" };
+		}
+
+		const $section = $(".layout-main-section").first();
+		if ($section.length) {
+			return { $el: $section, mode: "prepend" };
+		}
+
+		const $head = $(".page-head .page-head-content").first();
+		if ($head.length) {
+			return { $el: $head, mode: "append" };
+		}
+
+		return null;
+	}
+
+	function bar_is_mounted() {
+		const $bar = $("#" + BAR_ID);
+		if (!$bar.length) return false;
+		// Detached / replaced by workspace re-render
+		if (!document.body.contains($bar[0])) return false;
+		return true;
+	}
+
+	function build_bar() {
+		return $(`
+			<div id="${BAR_ID}" class="ido-event-bar" role="region" aria-label="${__(
+				"تصفية حسب الفعالية"
+			)}">
+				<div class="ido-event-bar__icon">${ICONS.calendar}</div>
+				<div class="ido-event-bar__meta">
+					<div class="ido-event-bar__eyebrow">${__("سياق الفعالية")}</div>
+					<div id="ido-workspace-event-hint" class="ido-event-bar__hint">${__(
+						"عرض كل البيانات"
+					)}</div>
 				</div>
-			`);
+				<div class="ido-event-bar__controls">
+					<div class="ido-event-picker" id="ido-workspace-event-picker">
+						<button type="button" class="ido-event-picker__btn" id="ido-workspace-event-btn" aria-haspopup="listbox" aria-expanded="false">
+							<span id="ido-workspace-event-dot" class="ido-event-picker__dot"></span>
+							<span id="ido-workspace-event-label" class="ido-event-picker__label">${__(
+								"كل الفعاليات"
+							)}</span>
+							<span class="ido-event-picker__chevron">${ICONS.chevron}</span>
+						</button>
+						<div class="ido-event-picker__menu" id="ido-workspace-event-menu" role="listbox"></div>
+					</div>
+					<button type="button" class="ido-event-bar__clear" id="ido-workspace-event-clear" title="${__(
+						"مسح التصفية"
+					)}" aria-label="${__("مسح التصفية")}" disabled>
+						${ICONS.close}
+					</button>
+				</div>
+			</div>
+		`);
+	}
 
-			const $editor = $(".codex-editor").first();
-			if ($editor.length) {
-				bar.insertBefore($editor);
-			} else {
-				$host.prepend(bar);
-			}
-
-			$("#ido-workspace-event-btn").on("click", function (e) {
+	function bind_bar_events() {
+		$("#ido-workspace-event-btn")
+			.off("click.ido_event")
+			.on("click.ido_event", function (e) {
 				e.preventDefault();
 				e.stopPropagation();
 				const $picker = $("#ido-workspace-event-picker");
@@ -264,43 +328,111 @@ frappe.provide("ido_event.workspace");
 				$(this).attr("aria-expanded", open ? "true" : "false");
 			});
 
-			$("#ido-workspace-event-menu").on("click", ".ido-event-picker__item", function (e) {
+		$("#ido-workspace-event-menu")
+			.off("click.ido_event")
+			.on("click.ido_event", ".ido-event-picker__item", function (e) {
 				e.preventDefault();
 				e.stopPropagation();
 				const val = $(this).attr("data-event") || "";
 				ido_event.workspace.set_selected(val || null);
 			});
 
-			$("#ido-workspace-event-clear").on("click", function (e) {
+		$("#ido-workspace-event-clear")
+			.off("click.ido_event")
+			.on("click.ido_event", function (e) {
 				e.preventDefault();
 				ido_event.workspace.set_selected(null);
 			});
 
-			if (!ido_event.workspace._menu_bound) {
-				ido_event.workspace._menu_bound = true;
-				$(document).on("click.ido_event_picker", function (e) {
-					if (!$(e.target).closest("#ido-workspace-event-picker").length) {
-						ido_event.workspace.close_menu();
-					}
-				});
-				$(document).on("keydown.ido_event_picker", function (e) {
-					if (e.key === "Escape") ido_event.workspace.close_menu();
-				});
-			}
+		if (!ido_event.workspace._menu_bound) {
+			ido_event.workspace._menu_bound = true;
+			$(document).on("click.ido_event_picker", function (e) {
+				if (!$(e.target).closest("#ido-workspace-event-picker").length) {
+					ido_event.workspace.close_menu();
+				}
+			});
+			$(document).on("keydown.ido_event_picker", function (e) {
+				if (e.key === "Escape") ido_event.workspace.close_menu();
+			});
 		}
+	}
 
+	async function load_events_into_bar() {
 		try {
 			const res = await frappe.xcall("ido_event.workspace_filters.list_events");
-			ido_event.workspace.events = res.events || [];
+			ido_event.workspace.events = (res && res.events) || [];
 			if (!ido_event.workspace.selected) {
 				ido_event.workspace.selected =
-					localStorage.getItem(STORAGE_KEY) || res.selected || null;
+					localStorage.getItem(STORAGE_KEY) || (res && res.selected) || null;
 			}
 			ido_event.workspace.update_label();
 		} catch (e) {
 			console.warn("ido_event list_events", e);
 		}
+	}
+
+	ido_event.workspace.inject_picker = async function () {
+		if (!should_show_picker()) {
+			$("#" + BAR_ID).remove();
+			ido_event.workspace._inject_attempts = 0;
+			return false;
+		}
+
+		const host = find_inject_host();
+		if (!host) {
+			return false;
+		}
+
+		if (!bar_is_mounted()) {
+			$("#" + BAR_ID).remove();
+			const bar = build_bar();
+			if (host.mode === "before") {
+				bar.insertBefore(host.$el);
+			} else if (host.mode === "append") {
+				host.$el.append(bar);
+			} else {
+				host.$el.prepend(bar);
+			}
+			bind_bar_events();
+		}
+
+		await load_events_into_bar();
+		ido_event.workspace._inject_attempts = 0;
+		return true;
 	};
+
+	function schedule_inject(delay) {
+		if (ido_event.workspace._inject_timer) {
+			clearTimeout(ido_event.workspace._inject_timer);
+		}
+		ido_event.workspace._inject_timer = setTimeout(async () => {
+			ido_event.workspace._inject_timer = null;
+			const ok = await ido_event.workspace.inject_picker();
+			if (ok || !should_show_picker()) return;
+
+			ido_event.workspace._inject_attempts += 1;
+			if (ido_event.workspace._inject_attempts < MAX_INJECT_ATTEMPTS) {
+				schedule_inject(200);
+			}
+		}, delay || 0);
+	}
+
+	function watch_dom_for_host() {
+		if (ido_event.workspace._observer) return;
+		if (typeof MutationObserver === "undefined") return;
+
+		ido_event.workspace._observer = new MutationObserver(() => {
+			if (!should_show_picker()) return;
+			if (bar_is_mounted()) return;
+			if (find_inject_host()) {
+				schedule_inject(50);
+			}
+		});
+		ido_event.workspace._observer.observe(document.body, {
+			childList: true,
+			subtree: true,
+		});
+	}
 
 	ido_event.workspace.patch_widgets = function () {
 		if (ido_event.workspace._patched) return;
@@ -342,20 +474,34 @@ frappe.provide("ido_event.workspace");
 		};
 	};
 
+	function on_route_or_page() {
+		ido_event.workspace._inject_attempts = 0;
+		if (should_show_picker()) {
+			schedule_inject(150);
+			schedule_inject(500);
+			schedule_inject(1200);
+		} else {
+			$("#" + BAR_ID).remove();
+		}
+	}
+
 	function boot() {
 		ido_event.workspace.patch_widgets();
 		ido_event.workspace.selected = localStorage.getItem(STORAGE_KEY);
-		const try_inject = () => {
-			if (is_ido_workspace()) {
-				ido_event.workspace.inject_picker();
-			} else {
-				$("#ido-workspace-event-bar").remove();
-			}
-		};
-		try_inject();
-		frappe.router.on("change", () => setTimeout(try_inject, 200));
-		$(document).on("page-change", () => setTimeout(try_inject, 300));
+		watch_dom_for_host();
+		on_route_or_page();
+
+		if (frappe.router && typeof frappe.router.on === "function") {
+			frappe.router.on("change", on_route_or_page);
+		}
+		$(document).on("page-change", on_route_or_page);
 	}
 
-	$(boot);
+	if (window.frappe && frappe.ready) {
+		frappe.ready(boot);
+	} else {
+		$(boot);
+	}
+	// Desk sometimes loads app_include after first paint
+	$(document).on("app_ready", boot);
 })();
