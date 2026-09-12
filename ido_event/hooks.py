@@ -103,6 +103,10 @@ fixtures = [
 		"filters": [["name", "like", "IDO%"]],
 	},
 	{
+		"dt": "Role Profile",
+		"filters": [["name", "like", "IDO%"]],
+	},
+	{
 		"dt": "Workspace",
 		"filters": [["name", "in", ["IDO Events", "IDO Play"]]],
 	},

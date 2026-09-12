@@ -25,6 +25,7 @@ DESKTOP_LOGO = "/assets/ido_event/icons/desktop_icons/solid/ido_events.svg"
 def after_install():
 	_ensure_module()
 	_ensure_roles()
+	_ensure_role_profiles()
 	_adopt_existing_doctypes()
 	_drop_merged_custom_fields()
 	_purge_ui_scripts()
@@ -38,6 +39,8 @@ def before_migrate():
 
 def after_migrate():
 	_ensure_module()
+	_ensure_roles()
+	_ensure_role_profiles()
 	_adopt_existing_doctypes()
 	_drop_merged_custom_fields()
 	_purge_ui_scripts()
@@ -337,7 +340,97 @@ def _ensure_roles():
 				{
 					"doctype": "Role",
 					"role_name": role,
-					"desk_access": 1,
+					"desk_access": 0 if role == "IDO Guest" else 1,
 					"is_custom": 1,
 				}
 			).insert(ignore_permissions=True)
+
+
+# Preconfigured Role Profiles → bundled IDO roles (also in fixtures/role_profile.json)
+ROLE_PROFILES = {
+	"IDO Owner": [
+		"IDO Owner",
+		"IDO Event Manager",
+		"IDO Event Planner",
+		"IDO Organizer",
+		"IDO Operations",
+		"IDO Venue Manager",
+		"IDO Visa Team",
+		"IDO Travel Team",
+		"IDO Airport Desk",
+		"IDO Hotel Desk",
+		"IDO Badge Team",
+		"IDO Usher",
+		"IDO Guest Services",
+		"IDO Driver",
+		"IDO Protocol Desk",
+		"IDO Liaison Host",
+		"IDO Security Vetting",
+		"IDO Accreditation Officer",
+	],
+	"IDO Event Manager": [
+		"IDO Event Manager",
+		"IDO Event Planner",
+		"IDO Organizer",
+		"IDO Operations",
+		"IDO Venue Manager",
+	],
+	"IDO Event Planner": ["IDO Event Planner", "IDO Organizer"],
+	"IDO Organizer": ["IDO Organizer", "IDO Operations"],
+	"IDO Operations": [
+		"IDO Operations",
+		"IDO Airport Desk",
+		"IDO Hotel Desk",
+		"IDO Badge Team",
+		"IDO Usher",
+		"IDO Guest Services",
+		"IDO Driver",
+	],
+	"IDO Field Ops": [
+		"IDO Airport Desk",
+		"IDO Badge Team",
+		"IDO Usher",
+		"IDO Driver",
+		"IDO Guest Services",
+	],
+	"IDO Visa Team": ["IDO Visa Team"],
+	"IDO Travel Team": ["IDO Travel Team", "IDO Airport Desk"],
+	"IDO Airport Desk": ["IDO Airport Desk", "IDO Driver"],
+	"IDO Hotel Desk": ["IDO Hotel Desk"],
+	"IDO Badge Team": ["IDO Badge Team", "IDO Usher"],
+	"IDO Guest Services": ["IDO Guest Services", "IDO Usher"],
+	"IDO Protocol Desk": ["IDO Protocol Desk", "IDO Liaison Host"],
+	"IDO Security": ["IDO Security Vetting", "IDO Accreditation Officer"],
+	"IDO Venue Manager": ["IDO Venue Manager", "IDO Usher"],
+	"IDO Driver": ["IDO Driver"],
+	"IDO Usher": ["IDO Usher"],
+	"IDO Guest": ["IDO Guest"],
+}
+
+
+def _ensure_role_profiles():
+	"""Create / sync preconfigured Role Profiles for every IDO persona."""
+	_ensure_roles()
+	for profile_name, role_list in ROLE_PROFILES.items():
+		wanted = [r for r in role_list if frappe.db.exists("Role", r)]
+		if frappe.db.exists("Role Profile", profile_name):
+			doc = frappe.get_doc("Role Profile", profile_name)
+			current = {r.role for r in (doc.roles or [])}
+			if current == set(wanted):
+				continue
+			doc.set("roles", [])
+			for role in wanted:
+				doc.append("roles", {"role": role})
+			doc.flags.ignore_permissions = True
+			# Avoid cascading user saves during migrate
+			doc.flags.ignore_version = True
+			doc.save(ignore_permissions=True)
+		else:
+			doc = frappe.get_doc(
+				{
+					"doctype": "Role Profile",
+					"role_profile": profile_name,
+					"roles": [{"role": r} for r in wanted],
+				}
+			)
+			doc.insert(ignore_permissions=True)

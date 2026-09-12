@@ -1,0 +1,186 @@
+[
+  {
+    "doctype": "Role Profile",
+    "name": "IDO Owner",
+    "role_profile": "IDO Owner",
+    "roles": [
+      {"doctype": "Has Role", "role": "IDO Owner"},
+      {"doctype": "Has Role", "role": "IDO Event Manager"},
+      {"doctype": "Has Role", "role": "IDO Event Planner"},
+      {"doctype": "Has Role", "role": "IDO Organizer"},
+      {"doctype": "Has Role", "role": "IDO Operations"},
+      {"doctype": "Has Role", "role": "IDO Venue Manager"},
+      {"doctype": "Has Role", "role": "IDO Visa Team"},
+      {"doctype": "Has Role", "role": "IDO Travel Team"},
+      {"doctype": "Has Role", "role": "IDO Airport Desk"},
+      {"doctype": "Has Role", "role": "IDO Hotel Desk"},
+      {"doctype": "Has Role", "role": "IDO Badge Team"},
+      {"doctype": "Has Role", "role": "IDO Usher"},
+      {"doctype": "Has Role", "role": "IDO Guest Services"},
+      {"doctype": "Has Role", "role": "IDO Driver"},
+      {"doctype": "Has Role", "role": "IDO Protocol Desk"},
+      {"doctype": "Has Role", "role": "IDO Liaison Host"},
+      {"doctype": "Has Role", "role": "IDO Security Vetting"},
+      {"doctype": "Has Role", "role": "IDO Accreditation Officer"}
+    ]
+  },
+  {
+    "doctype": "Role Profile",
+    "name": "IDO Event Manager",
+    "role_profile": "IDO Event Manager",
+    "roles": [
+      {"doctype": "Has Role", "role": "IDO Event Manager"},
+      {"doctype": "Has Role", "role": "IDO Event Planner"},
+      {"doctype": "Has Role", "role": "IDO Organizer"},
+      {"doctype": "Has Role", "role": "IDO Operations"},
+      {"doctype": "Has Role", "role": "IDO Venue Manager"}
+    ]
+  },
+  {
+    "doctype": "Role Profile",
+    "name": "IDO Event Planner",
+    "role_profile": "IDO Event Planner",
+    "roles": [
+      {"doctype": "Has Role", "role": "IDO Event Planner"},
+      {"doctype": "Has Role", "role": "IDO Organizer"}
+    ]
+  },
+  {
+    "doctype": "Role Profile",
+    "name": "IDO Organizer",
+    "role_profile": "IDO Organizer",
+    "roles": [
+      {"doctype": "Has Role", "role": "IDO Organizer"},
+      {"doctype": "Has Role", "role": "IDO Operations"}
+    ]
+  },
+  {
+    "doctype": "Role Profile",
+    "name": "IDO Operations",
+    "role_profile": "IDO Operations",
+    "roles": [
+      {"doctype": "Has Role", "role": "IDO Operations"},
+      {"doctype": "Has Role", "role": "IDO Airport Desk"},
+      {"doctype": "Has Role", "role": "IDO Hotel Desk"},
+      {"doctype": "Has Role", "role": "IDO Badge Team"},
+      {"doctype": "Has Role", "role": "IDO Usher"},
+      {"doctype": "Has Role", "role": "IDO Guest Services"},
+      {"doctype": "Has Role", "role": "IDO Driver"}
+    ]
+  },
+  {
+    "doctype": "Role Profile",
+    "name": "IDO Field Ops",
+    "role_profile": "IDO Field Ops",
+    "roles": [
+      {"doctype": "Has Role", "role": "IDO Airport Desk"},
+      {"doctype": "Has Role", "role": "IDO Badge Team"},
+      {"doctype": "Has Role", "role": "IDO Usher"},
+      {"doctype": "Has Role", "role": "IDO Driver"},
+      {"doctype": "Has Role", "role": "IDO Guest Services"}
+    ]
+  },
+  {
+    "doctype": "Role Profile",
+    "name": "IDO Visa Team",
+    "role_profile": "IDO Visa Team",
+    "roles": [
+      {"doctype": "Has Role", "role": "IDO Visa Team"}
+    ]
+  },
+  {
+    "doctype": "Role Profile",
+    "name": "IDO Travel Team",
+    "role_profile": "IDO Travel Team",
+    "roles": [
+      {"doctype": "Has Role", "role": "IDO Travel Team"},
+      {"doctype": "Has Role", "role": "IDO Airport Desk"}
+    ]
+  },
+  {
+    "doctype": "Role Profile",
+    "name": "IDO Airport Desk",
+    "role_profile": "IDO Airport Desk",
+    "roles": [
+      {"doctype": "Has Role", "role": "IDO Airport Desk"},
+      {"doctype": "Has Role", "role": "IDO Driver"}
+    ]
+  },
+  {
+    "doctype": "Role Profile",
+    "name": "IDO Hotel Desk",
+    "role_profile": "IDO Hotel Desk",
+    "roles": [
+      {"doctype": "Has Role", "role": "IDO Hotel Desk"}
+    ]
+  },
+  {
+    "doctype": "Role Profile",
+    "name": "IDO Badge Team",
+    "role_profile": "IDO Badge Team",
+    "roles": [
+      {"doctype": "Has Role", "role": "IDO Badge Team"},
+      {"doctype": "Has Role", "role": "IDO Usher"}
+    ]
+  },
+  {
+    "doctype": "Role Profile",
+    "name": "IDO Guest Services",
+    "role_profile": "IDO Guest Services",
+    "roles": [
+      {"doctype": "Has Role", "role": "IDO Guest Services"},
+      {"doctype": "Has Role", "role": "IDO Usher"}
+    ]
+  },
+  {
+    "doctype": "Role Profile",
+    "name": "IDO Protocol Desk",
+    "role_profile": "IDO Protocol Desk",
+    "roles": [
+      {"doctype": "Has Role", "role": "IDO Protocol Desk"},
+      {"doctype": "Has Role", "role": "IDO Liaison Host"}
+    ]
+  },
+  {
+    "doctype": "Role Profile",
+    "name": "IDO Security",
+    "role_profile": "IDO Security",
+    "roles": [
+      {"doctype": "Has Role", "role": "IDO Security Vetting"},
+      {"doctype": "Has Role", "role": "IDO Accreditation Officer"}
+    ]
+  },
+  {
+    "doctype": "Role Profile",
+    "name": "IDO Venue Manager",
+    "role_profile": "IDO Venue Manager",
+    "roles": [
+      {"doctype": "Has Role", "role": "IDO Venue Manager"},
+      {"doctype": "Has Role", "role": "IDO Usher"}
+    ]
+  },
+  {
+    "doctype": "Role Profile",
+    "name": "IDO Driver",
+    "role_profile": "IDO Driver",
+    "roles": [
+      {"doctype": "Has Role", "role": "IDO Driver"}
+    ]
+  },
+  {
+    "doctype": "Role Profile",
+    "name": "IDO Usher",
+    "role_profile": "IDO Usher",
+    "roles": [
+      {"doctype": "Has Role", "role": "IDO Usher"}
+    ]
+  },
+  {
+    "doctype": "Role Profile",
+    "name": "IDO Guest",
+    "role_profile": "IDO Guest",
+    "roles": [
+      {"doctype": "Has Role", "role": "IDO Guest"}
+    ]
+  }
+]
