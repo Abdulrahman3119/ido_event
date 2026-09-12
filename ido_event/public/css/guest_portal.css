@@ -522,6 +522,8 @@ body:has(.ido-guest-portal) .web-page-content {
 
 .ido-upload-field {
 	min-width: 0;
+	display: flex;
+	flex-direction: column;
 }
 
 .ido-upload-label {
@@ -533,9 +535,12 @@ body:has(.ido-guest-portal) .web-page-content {
 }
 
 .ido-upload {
+	position: relative;
 	display: block;
+	flex: 1;
+	min-width: 0;
+	min-height: 220px;
 	cursor: pointer;
-	height: 100%;
 }
 
 .ido-upload input[type="file"] {
@@ -550,16 +555,19 @@ body:has(.ido-guest-portal) .web-page-content {
 .ido-upload-card {
 	position: relative;
 	display: block;
+	width: 100%;
 	height: 100%;
-	min-height: 210px;
+	min-height: 220px;
 	border-radius: 18px;
 	overflow: hidden;
+	isolation: isolate;
 	background:
 		radial-gradient(circle at 20% 15%, rgba(92, 45, 145, 0.08), transparent 45%),
 		#fff;
 	border: 1.5px dashed rgba(92, 45, 145, 0.32);
 	box-shadow: 0 10px 28px rgba(40, 20, 70, 0.05);
 	transition: border-color 0.18s, box-shadow 0.18s, transform 0.18s, background 0.18s;
+	box-sizing: border-box;
 }
 
 .ido-upload:hover .ido-upload-card {
@@ -576,20 +584,31 @@ body:has(.ido-guest-portal) .web-page-content {
 
 .ido-upload-empty,
 .ido-upload-filled {
+	box-sizing: border-box;
+}
+
+.ido-upload-empty {
 	display: flex;
 	flex-direction: column;
 	align-items: center;
 	justify-content: center;
 	text-align: center;
 	padding: 22px 16px;
-	min-height: 210px;
-	box-sizing: border-box;
+	min-height: 220px;
+	height: 100%;
 }
 
 .ido-upload-filled {
 	display: none;
+	position: absolute;
+	inset: 0;
+	width: 100%;
+	height: 100%;
 	padding: 0;
-	position: relative;
+	margin: 0;
+	overflow: hidden;
+	align-items: center;
+	justify-content: center;
 }
 
 .ido-upload.is-filled .ido-upload-empty {
@@ -610,6 +629,7 @@ body:has(.ido-guest-portal) .web-page-content {
 	color: var(--ido-brand);
 	background: linear-gradient(145deg, #efe6fa, #f8f4ff);
 	border: 1px solid rgba(92, 45, 145, 0.12);
+	flex-shrink: 0;
 }
 
 .ido-upload-icon svg {
@@ -652,33 +672,58 @@ body:has(.ido-guest-portal) .web-page-content {
 	box-shadow: 0 8px 18px rgba(92, 45, 145, 0.28);
 }
 
+/* Passport: fill the card, stay clipped inside */
 .ido-upload-preview {
-	width: 100%;
-	height: 210px;
-	object-fit: cover;
 	display: block;
+	max-width: 100%;
+	max-height: 100%;
+	width: 100%;
+	height: 100%;
+	object-fit: contain;
+	object-position: center;
 	background: #111;
 }
 
-.ido-upload--face .ido-upload-card {
-	min-height: 210px;
+.ido-upload--passport .ido-upload-filled {
+	padding: 8px;
+	background: #111;
 }
 
-.ido-upload--face .ido-upload-preview {
-	width: 148px;
-	height: 148px;
-	border-radius: 50%;
-	margin: 28px auto 18px;
-	object-fit: cover;
-	border: 3px solid rgba(255, 255, 255, 0.9);
-	box-shadow: 0 12px 28px rgba(0, 0, 0, 0.35);
+.ido-upload--passport .ido-upload-preview {
+	border-radius: 10px;
+	width: 100%;
+	height: 100%;
+	object-fit: contain;
+}
+
+/* Face: circle centered inside the card — never overflows */
+.ido-upload--face .ido-upload-card {
+	min-height: 220px;
 }
 
 .ido-upload--face .ido-upload-filled {
+	flex-direction: column;
+	gap: 10px;
+	padding: 36px 16px 48px;
 	background:
 		radial-gradient(circle at 50% 30%, rgba(92, 45, 145, 0.45), transparent 55%),
 		#1a1028;
-	min-height: 210px;
+}
+
+.ido-upload--face .ido-upload-preview {
+	width: min(68%, 132px);
+	height: auto;
+	aspect-ratio: 1 / 1;
+	max-width: 132px;
+	max-height: 132px;
+	border-radius: 50%;
+	margin: 0;
+	object-fit: cover;
+	object-position: center;
+	border: 3px solid rgba(255, 255, 255, 0.9);
+	box-shadow: 0 12px 28px rgba(0, 0, 0, 0.35);
+	flex-shrink: 0;
+	background: #2a1a40;
 }
 
 .ido-upload-badge {
@@ -692,12 +737,13 @@ body:has(.ido-guest-portal) .web-page-content {
 	font-size: 11px;
 	font-weight: 700;
 	z-index: 2;
+	pointer-events: none;
 }
 
 .ido-upload-change {
 	position: absolute;
 	left: 50%;
-	bottom: 14px;
+	bottom: 12px;
 	transform: translateX(-50%);
 	padding: 7px 14px;
 	border-radius: 999px;
@@ -708,14 +754,9 @@ body:has(.ido-guest-portal) .web-page-content {
 	white-space: nowrap;
 	z-index: 2;
 	box-shadow: 0 6px 16px rgba(0, 0, 0, 0.18);
-}
-
-.ido-upload--passport .ido-upload-preview {
-	height: 210px;
-}
-
-.ido-upload--passport .ido-upload-change {
-	bottom: 14px;
+	max-width: calc(100% - 24px);
+	overflow: hidden;
+	text-overflow: ellipsis;
 }
 
 @media (max-width: 540px) {
@@ -723,15 +764,16 @@ body:has(.ido-guest-portal) .web-page-content {
 		grid-template-columns: 1fr;
 	}
 
+	.ido-upload,
 	.ido-upload-card,
-	.ido-upload-empty,
-	.ido-upload-preview,
-	.ido-upload--passport .ido-upload-preview {
-		min-height: 190px;
+	.ido-upload-empty {
+		min-height: 200px;
 	}
 
-	.ido-upload--passport .ido-upload-preview {
-		height: 190px;
+	.ido-upload--face .ido-upload-preview {
+		width: min(56%, 120px);
+		max-width: 120px;
+		max-height: 120px;
 	}
 }
 
