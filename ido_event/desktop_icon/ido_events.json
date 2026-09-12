@@ -1,7 +1,7 @@
 {
  "app": "ido_event",
  "bg_color": "blue",
- "creation": "2026-09-11 17:06:51.254364",
+ "creation": "2026-09-11 15:30:58.981499",
  "docstatus": 0,
  "doctype": "Desktop Icon",
  "hidden": 0,
@@ -13,7 +13,7 @@
  "link_to": "IDO Events",
  "link_type": "Workspace Sidebar",
  "logo_url": "/assets/ido_event/icons/desktop_icons/solid/ido_events.svg",
- "modified": "2026-09-11 17:06:51.254364",
+ "modified": "2026-09-12 12:16:02.846515",
  "modified_by": "Administrator",
  "name": "IDO Events",
  "owner": "Administrator",
