@@ -81,7 +81,7 @@ def _ensure_workspace_visibility():
 		ws.flags.ignore_links = True
 		ws.save(ignore_permissions=True)
 
-	_ensure_workspace_sidebar(ws)
+	_ensure_workspace_sidebar(ws, rebuild=True)
 	_ensure_desktop_icon()
 	_inject_icon_into_desktop_layouts()
 
@@ -94,7 +94,7 @@ def _ensure_workspace_visibility():
 	frappe.clear_cache()
 
 
-def _ensure_workspace_sidebar(ws):
+def _ensure_workspace_sidebar(ws, *, rebuild: bool = False):
 	"""Create / repair Workspace Sidebar so the desktop icon is permitted."""
 	if frappe.db.exists("Workspace Sidebar", WORKSPACE_NAME):
 		sidebar = frappe.get_doc("Workspace Sidebar", WORKSPACE_NAME)
@@ -105,14 +105,14 @@ def _ensure_workspace_sidebar(ws):
 	sidebar.header_icon = ws.icon or "calendar-days"
 	sidebar.for_user = None
 
-	# Keep at least Home → workspace; rebuild from shortcuts if empty
 	has_home = any(
 		(row.link_type == "Workspace" and row.link_to == WORKSPACE_NAME) for row in (sidebar.items or [])
 	)
-	if not sidebar.items or not has_home:
+	# Rebuild when empty, missing Home, or explicitly requested after workspace redesign
+	if rebuild or not sidebar.items or not has_home:
 		items = [
 			{
-				"label": "Home",
+				"label": "الرئيسية",
 				"link_to": WORKSPACE_NAME,
 				"link_type": "Workspace",
 				"type": "Link",
